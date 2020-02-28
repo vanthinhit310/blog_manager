@@ -1,7 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f6c99a06-f22e-47f6-9fd0-60dddb5718b7" name="Default Changelist" comment="" />
+    <list default="true" id="f6c99a06-f22e-47f6-9fd0-60dddb5718b7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Console/Commands/Testcommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Model/PostComment.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Model/PostMeta.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Model/PostTag.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Model/Tag.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Permission.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Role.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/laratrust.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/laratrust_seeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_02_28_131047_create_tags_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_02_28_131055_create_post_tags_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_02_28_131101_create_post_metas_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_02_28_131747_create_post_comments_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_02_28_134543_laratrust_setup_tables.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_02_28_141316_add_image_url_to_users_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeds/LaratrustSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeds/RoleSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeds/SuperAdminSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeds/UserSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -124,6 +153,8 @@
       <path value="$PROJECT_DIR$/vendor/arcanedev/log-viewer" />
       <path value="$PROJECT_DIR$/vendor/arcanedev/support" />
       <path value="$PROJECT_DIR$/vendor/laravel/ui" />
+      <path value="$PROJECT_DIR$/vendor/kkszymanowski/traitor" />
+      <path value="$PROJECT_DIR$/vendor/santigarcor/laratrust" />
     </include_path>
   </component>
   <component name="ProjectId" id="1WIvVETxXChp5QBaG2CspPRrlih" />
@@ -190,6 +221,7 @@
       <workItem from="1581992564393" duration="21000" />
       <workItem from="1582014721652" duration="169000" />
       <workItem from="1582131032193" duration="1015000" />
+      <workItem from="1582895258445" duration="6074000" />
     </task>
     <servers />
   </component>
@@ -230,9 +262,14 @@
     </state>
     <state x="517" y="292" key="NewPhpFileDialog/0.0.1366.738/-1920.-304.1920.1050@0.0.1366.738" timestamp="1578850955878" />
     <state x="517" y="292" key="NewPhpFileDialog/0.0.1366.738@0.0.1366.738" timestamp="1581909507846" />
-    <state x="184" y="12" key="SettingsEditor" timestamp="1581940371467">
+    <state x="476" y="81" key="RollbackChangesDialog" timestamp="1582895843781">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
+    <state x="476" y="81" key="RollbackChangesDialog/0.0.1366.738/1366.-304.1920.1050@0.0.1366.738" timestamp="1582895843781" />
+    <state x="184" y="12" key="SettingsEditor" timestamp="1582895275984">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="184" y="12" key="SettingsEditor/0.0.1366.738/1366.-304.1920.1050@0.0.1366.738" timestamp="1582895275984" />
     <state x="184" y="12" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1581940371467" />
     <state x="339" y="165" key="run.anything.popup" timestamp="1581941738574">
       <screen x="0" y="0" width="1366" height="738" />
