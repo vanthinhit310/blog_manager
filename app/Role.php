@@ -3,8 +3,9 @@
 namespace App;
 
 use Laratrust\Models\LaratrustRole;
-
-class Role extends LaratrustRole
+use OwenIt\Auditing\Contracts\Auditable;
+class Role extends LaratrustRole implements Auditable
 {
     //
+    use \OwenIt\Auditing\Auditable;
 }

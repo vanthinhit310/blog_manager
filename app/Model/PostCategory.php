@@ -3,8 +3,9 @@
 namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
-
-class PostCategory extends Model
+use OwenIt\Auditing\Contracts\Auditable;
+class PostCategory extends Model implements Auditable
 {
     //
+    use \OwenIt\Auditing\Auditable;
 }

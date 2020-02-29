@@ -3,8 +3,9 @@
 namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
-
-class PostTag extends Model
+use OwenIt\Auditing\Contracts\Auditable;
+class PostTag extends Model implements Auditable
 {
     //
+    use \OwenIt\Auditing\Auditable;
 }
