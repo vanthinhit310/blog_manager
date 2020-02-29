@@ -57,7 +57,7 @@ class LoginController extends Controller
             if (auth()->user()->hasRole('owner')) {
                 return $this->sendLoginResponse($request);
             }else{
-                return redirect()->route('app.home');
+                return redirect()->route('app.home')->with('success','Login success');
             }
         }
 
@@ -76,7 +76,7 @@ class LoginController extends Controller
         $this->clearLoginAttempts($request);
 
         return $this->authenticated($request, $this->guard()->user())
-            ?: redirect()->intended($this->redirectPath());
+            ?: redirect()->intended($this->redirectPath())->with('success','Login success');
     }
 
     public function logout(Request $request)
