@@ -65,14 +65,19 @@
                                                         <form action="{{ route('admin.user.destroy', @$user) }}" method="post">
                                                             @csrf
                                                             @method('delete')
-
+                                                            @permission('update-user')
                                                             <a class="dropdown-item" href="{{ route('admin.user.edit', @$user) }}">{{ __('Edit') }}</a>
+                                                            @endpermission
+                                                            @permission('destroy-user')
                                                             <button type="button" class="dropdown-item" onclick="confirm('{{ __("Are you sure you want to delete this user?") }}') ? this.parentElement.submit() : ''">
                                                                 {{ __('Delete') }}
                                                             </button>
+                                                            @endpermission
                                                         </form>
                                                     @else
+                                                        @permission('update-user')
                                                         <a class="dropdown-item" href="{{ route('admin.profile.edit') }}">{{ __('Edit') }}</a>
+                                                        @endpermission
                                                     @endif
                                                 </div>
                                             </div>
