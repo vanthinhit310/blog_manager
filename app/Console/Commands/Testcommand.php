@@ -2,9 +2,9 @@
 
 namespace App\Console\Commands;
 
+use App\User;
+use Faker\Factory;
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Schema;
 
 class Testcommand extends Command
 {
@@ -39,13 +39,16 @@ class Testcommand extends Command
      */
     public function handle()
     {
-        Schema::disableForeignKeyConstraints();
-        DB::table('permission_role')->truncate();
-        DB::table('permission_user')->truncate();
-        DB::table('role_user')->truncate();
-        \App\User::truncate();
-        \App\Role::truncate();
-        \App\Permission::truncate();
-        Schema::enableForeignKeyConstraints();
+//        Schema::disableForeignKeyConstraints();
+//        Schema::enableForeignKeyConstraints();
+        $faker = Factory::create();
+        foreach (User::whereNull('created_at')->get()->chunk(100) as $users){
+            foreach ($users as $user){
+                $user->update([
+                    'created_at' => $faker->date($format = 'Y-m-d', $max = 'now').' '.$faker->time($format = 'H:i:s', $max = 'now')
+                ]);
+                $this->info('Success with user =========================== '.$user->firstName);
+            }
+        }
     }
 }
