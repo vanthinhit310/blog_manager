@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
+use Carbon\Carbon;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 
@@ -54,6 +55,10 @@ class LoginController extends Controller
         }
 
         if ($this->attemptLogin($request)) {
+            $user = auth()->user();
+            $user->update([
+                'last_login' => Carbon::now()
+            ]);
             if (auth()->user()->hasRole('owner')) {
                 return $this->sendLoginResponse($request);
             }else{

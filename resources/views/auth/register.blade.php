@@ -28,25 +28,54 @@
                         <form role="form" method="POST" action="{{ route('register') }}">
                             @csrf
 
-                            <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
+                            <div class="form-group{{ $errors->has('firstName') ? ' has-danger' : '' }}">
                                 <div class="input-group input-group-alternative mb-3">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+                                        <span class="input-group-text"><i class="fa fa-user" aria-hidden="true"></i></span>
                                     </div>
-                                    <input class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Name') }}" type="text" name="name" value="{{ old('name') }}" required autofocus>
+                                    <input autocomplete="off" class="form-control{{ $errors->has('firstName') ? ' is-invalid' : '' }}" placeholder="First name" type="text" name="firstName" value="{{ old('firstName') }}" required autofocus>
                                 </div>
-                                @if ($errors->has('name'))
+                                @if ($errors->has('firstName'))
                                     <span class="invalid-feedback" style="display: block;" role="alert">
-                                        <strong>{{ $errors->first('name') }}</strong>
+                                        <strong>{{ $errors->first('firstName') }}</strong>
                                     </span>
                                 @endif
                             </div>
+
+                            <div class="form-group{{ $errors->has('lastName') ? ' has-danger' : '' }}">
+                                <div class="input-group input-group-alternative mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fa fa-user" aria-hidden="true"></i></span>
+                                    </div>
+                                    <input autocomplete="off" class="form-control{{ $errors->has('lastName') ? ' is-invalid' : '' }}" placeholder="Last name" type="text" name="lastName" value="{{ old('lastName') }}" required autofocus>
+                                </div>
+                                @if ($errors->has('lastName'))
+                                    <span class="invalid-feedback" style="display: block;" role="alert">
+                                        <strong>{{ $errors->first('lastName') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+
+                            <div class="form-group{{ $errors->has('mobile') ? ' has-danger' : '' }}">
+                                <div class="input-group input-group-alternative mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fa fa-phone-square" aria-hidden="true"></i></span>
+                                    </div>
+                                    <input autocomplete="off" class="form-control{{ $errors->has('mobile') ? ' is-invalid' : '' }}" placeholder="Phone number" type="text" name="mobile" value="{{ old('mobile') }}" required autofocus>
+                                </div>
+                                @if ($errors->has('mobile'))
+                                    <span class="invalid-feedback" style="display: block;" role="alert">
+                                        <strong>{{ $errors->first('mobile') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+
                             <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
                                 <div class="input-group input-group-alternative mb-3">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                                     </div>
-                                    <input class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="{{ __('Email') }}" type="email" name="email" value="{{ old('email') }}" required>
+                                    <input autocomplete="off" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="{{ __('Email') }}" type="email" name="email" value="{{ old('email') }}" required>
                                 </div>
                                 @if ($errors->has('email'))
                                     <span class="invalid-feedback" style="display: block;" role="alert">
@@ -59,7 +88,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                                     </div>
-                                    <input class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="{{ __('Password') }}" type="password" name="password" required>
+                                    <input autocomplete="off" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="{{ __('Password') }}" type="password" name="password" required>
                                 </div>
                                 @if ($errors->has('password'))
                                     <span class="invalid-feedback" style="display: block;" role="alert">
@@ -74,9 +103,6 @@
                                     </div>
                                     <input class="form-control" placeholder="{{ __('Confirm Password') }}" type="password" name="password_confirmation" required>
                                 </div>
-                            </div>
-                            <div class="text-muted font-italic">
-                                <small>{{ __('password strength') }}: <span class="text-success font-weight-700">{{ __('strong') }}strong</span></small>
                             </div>
                             <div class="row my-4">
                                 <div class="col-12">

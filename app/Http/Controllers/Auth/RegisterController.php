@@ -4,8 +4,12 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
+use App\Role;
 use App\User;
+use Carbon\Carbon;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
@@ -50,8 +54,10 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
+            'firstName' => ['required', 'string', 'max:255'],
+            'lastName' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'mobile' => ['required','unique:users','regex:/(0)[0-9]{9}/'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
@@ -64,10 +70,30 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
+        $user_role = Role::whereName('user')->first();
+        $user = User::create([
+            'firstName' => $data['firstName'],
+            'lastName' => $data['lastName'],
+            'mobile' => $data['mobile'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'register_at' => Carbon::now(),
         ]);
+        $user->attachRole($user_role);
+        return $user;
+    }
+
+    public function register(Request $request)
+    {
+        $this->validator($request->all())->validate();
+
+        event(new Registered($user = $this->create($request->all())));
+
+        $this->guard()->login($user);
+        $user->update([
+            'last_login' => Carbon::now()
+        ]);
+        return $this->registered($request, $user)
+            ?: redirect($this->redirectPath());
     }
 }
