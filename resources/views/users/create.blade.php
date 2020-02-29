@@ -73,7 +73,17 @@
                                         </span>
                                     @endif
                                 </div>
-
+                                @permission('assign-role')
+                                <div class="form-group">
+                                    <label class="form-control-label" >Choose role assign for this user</label>
+                                    @foreach($roles as $role)
+                                        <div class="custom-control custom-radio mb-3">
+                                            <input value="{{@$role->name}}" name="role" {{$role->name == 'user' ? 'checked' : ''}} class="custom-control-input" id="role{{@$role->id}}" type="radio">
+                                            <label class="custom-control-label" for="role{{@$role->id}}">{{@$role->display_name}}</label>
+                                        </div>
+                                    @endforeach
+                                </div>
+                                @endpermission
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-success mt-4">{{ __('Save') }}</button>
                                 </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\ConstManager\ConstManager;
+use App\Role;
 use App\User;
 use App\Http\Requests\UserRequest;
 use Illuminate\Support\Facades\Hash;
@@ -33,7 +34,8 @@ class UserController extends Controller
     public function create()
     {
         if (auth()->user()->can('add-user')) {
-            return view('users.create');
+            $roles = Role::all();
+            return view('users.create', compact('roles'));
         } else {
             return redirect()->route('admin.dashboard')->with('info', 'Permission denied!');
         }
@@ -49,7 +51,13 @@ class UserController extends Controller
     public function store(UserRequest $request, User $model)
     {
         if (auth()->user()->can('add-user')) {
-            $model->create($request->merge(['password' => Hash::make($request->get('password'))])->all());
+            $user = $model->create($request->merge(['password' => Hash::make($request->get('password'))])->all());
+
+            if (!empty($request->role)){
+                $user->attachRole($request->role);
+            }else{
+                $user->attachRole(ConstManager::USERROLE);
+            }
 
             return redirect()->route('admin.user.index')->withStatus(__('User successfully created.'));
         } else {
@@ -102,7 +110,7 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        if (auth()->user()->can('destroy-user-s')) {
+        if (auth()->user()->can('destroy-user')) {
             $user->delete();
 
             return redirect()->route('admin.user.index')->withStatus(__('User successfully deleted.'));
