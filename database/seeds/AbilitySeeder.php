@@ -19,8 +19,8 @@ class AbilitySeeder extends Seeder
         DB::table('permission_role')->truncate();
         DB::table('permission_user')->truncate();
         Schema::enableForeignKeyConstraints();
-        $owner = Role::where('name', 'owner')->first();
-        DB::table('permission')->insert([
+        $owner = \App\Role::where('name', 'owner')->first();
+        DB::table('permissions')->insert([
             [
                 'name' => Str::slug('List Role', '-'),
                 'display_name' => 'List Role',
@@ -159,6 +159,17 @@ class AbilitySeeder extends Seeder
                 'description' => 'Block Or Unblock A User',
                 'group' => 'User'
             ],
+            [
+                'name' => Str::slug('Audit Log', '-'),
+                'display_name' => 'Audit Log',
+                'description' => 'View Audit Log',
+                'group' => 'System'
+            ],
         ]);
+
+        $permissions = \App\Permission::all();
+        foreach ($permissions as $p){
+            $owner->attachPermission($p);
+        }
     }
 }

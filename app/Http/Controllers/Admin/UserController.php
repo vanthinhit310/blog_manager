@@ -17,7 +17,11 @@ class UserController extends Controller
      */
     public function index(User $model)
     {
-        return view('users.index', ['users' => $model->orderBy('created_at',ConstManager::DESCENDING)->paginate(ConstManager::PAGINATE)]);
+        if (auth()->user()->can('list-user')) {
+            return view('users.index', ['users' => $model->orderBy('id', ConstManager::DESCENDING)->paginate(ConstManager::PAGINATE)]);
+        }else{
+            return redirect()->route('admin.dashboard')->with('info','Permission denied!');
+        }
     }
 
     /**
