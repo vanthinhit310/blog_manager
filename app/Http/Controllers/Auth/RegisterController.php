@@ -94,6 +94,6 @@ class RegisterController extends Controller
             'last_login' => Carbon::now()
         ]);
         return $this->registered($request, $user)
-            ?: redirect($this->redirectPath());
+            ?: redirect($this->redirectPath())->with('success','User has been registered');
     }
 }
