@@ -13,7 +13,9 @@
                                 <h3 class="mb-0">{{ __('Users') }}</h3>
                             </div>
                             <div class="col-4 text-right">
+                                @permission('add-user')
                                 <a href="{{ route('admin.user.create') }}" class="btn btn-sm btn-primary">{{ __('Add user') }}</a>
+                                @endpermission
                             </div>
                         </div>
                     </div>

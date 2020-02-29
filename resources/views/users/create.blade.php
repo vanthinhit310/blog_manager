@@ -1,7 +1,7 @@
 @extends('layouts.app', ['title' => __('User Management')])
 
 @section('content')
-    @include('users.partials.header', ['title' => __('Add User')])   
+    @include('users.partials.header', ['title' => __('Add User')])
 
     <div class="container-fluid mt--7">
         <div class="row">
@@ -13,23 +13,43 @@
                                 <h3 class="mb-0">{{ __('User Management') }}</h3>
                             </div>
                             <div class="col-4 text-right">
-                                <a href="{{ route('user.index') }}" class="btn btn-sm btn-primary">{{ __('Back to list') }}</a>
+                                <a href="{{ route('admin.user.index') }}" class="btn btn-sm btn-primary">{{ __('Back to list') }}</a>
                             </div>
                         </div>
                     </div>
                     <div class="card-body">
-                        <form method="post" action="{{ route('user.store') }}" autocomplete="off">
+                        <form method="post" action="{{ route('admin.user.store') }}" autocomplete="off">
                             @csrf
-                            
+
                             <h6 class="heading-small text-muted mb-4">{{ __('User information') }}</h6>
                             <div class="pl-lg-4">
-                                <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
-                                    <label class="form-control-label" for="input-name">{{ __('Name') }}</label>
-                                    <input type="text" name="name" id="input-name" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Name') }}" value="{{ old('name') }}" required autofocus>
+                                <div class="form-group{{ $errors->has('firstName') ? ' has-danger' : '' }}">
+                                    <label class="form-control-label" for="input-first-name">First name</label>
+                                    <input type="text" name="firstName" id="input-first-name" class="form-control form-control-alternative{{ $errors->has('firstName') ? ' is-invalid' : '' }}" placeholder="First name" value="{{ old('firstName') }}" required autofocus>
 
-                                    @if ($errors->has('name'))
+                                    @if ($errors->has('firstName'))
                                         <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('name') }}</strong>
+                                            <strong>{{ $errors->first('firstName') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                                <div class="form-group{{ $errors->has('lastName') ? ' has-danger' : '' }}">
+                                    <label class="form-control-label" for="input-last-name">Last name</label>
+                                    <input type="text" name="lastName" id="input-last-name" class="form-control form-control-alternative{{ $errors->has('lastName') ? ' is-invalid' : '' }}" placeholder="Last name" value="{{ old('lastName') }}" required autofocus>
+
+                                    @if ($errors->has('lastName'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('lastName') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                                <div class="form-group{{ $errors->has('mobile') ? ' has-danger' : '' }}">
+                                    <label class="form-control-label" for="input-mobile">Phone number</label>
+                                    <input type="text" name="mobile" id="input-mobile" class="form-control form-control-alternative{{ $errors->has('mobile') ? ' is-invalid' : '' }}" placeholder="Phone number" value="{{ old('mobile') }}" required autofocus>
+
+                                    @if ($errors->has('mobile'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('mobile') }}</strong>
                                         </span>
                                     @endif
                                 </div>
@@ -46,16 +66,12 @@
                                 <div class="form-group{{ $errors->has('password') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-password">{{ __('Password') }}</label>
                                     <input type="password" name="password" id="input-password" class="form-control form-control-alternative{{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="{{ __('Password') }}" value="" required>
-                                    
+
                                     @if ($errors->has('password'))
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $errors->first('password') }}</strong>
                                         </span>
                                     @endif
-                                </div>
-                                <div class="form-group">
-                                    <label class="form-control-label" for="input-password-confirmation">{{ __('Confirm Password') }}</label>
-                                    <input type="password" name="password_confirmation" id="input-password-confirmation" class="form-control form-control-alternative" placeholder="{{ __('Confirm Password') }}" value="" required>
                                 </div>
 
                                 <div class="text-center">
@@ -67,7 +83,7 @@
                 </div>
             </div>
         </div>
-        
+
         @include('layouts.footers.auth')
     </div>
 @endsection

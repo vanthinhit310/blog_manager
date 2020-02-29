@@ -160,6 +160,12 @@ class AbilitySeeder extends Seeder
                 'group' => 'User'
             ],
             [
+                'name' => Str::slug('Assign Role', '-'),
+                'display_name' => 'Assign Role',
+                'description' => 'Assign Role For A User',
+                'group' => 'User'
+            ],
+            [
                 'name' => Str::slug('Audit Log', '-'),
                 'display_name' => 'Audit Log',
                 'description' => 'View Audit Log',
