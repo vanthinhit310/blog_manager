@@ -18,7 +18,19 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'firstName',
+        'middleName',
+        'lastName',
+        'email',
+        'password',
+        'mobile',
+        'email_verified_at',
+        'register_at',
+        'last_login',
+        'intro',
+        'profile',
+        'created_at',
+        'updated_at'
     ];
 
     /**
@@ -27,7 +39,8 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password',
+        'remember_token',
     ];
 
     /**
@@ -38,4 +51,7 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public function getFullNameAttribute() {
+        return ucfirst($this->firstName) . ' ' . ucfirst($this->lastName);
+    }
 }
