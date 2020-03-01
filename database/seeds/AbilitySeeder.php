@@ -171,6 +171,12 @@ class AbilitySeeder extends Seeder
                 'description' => 'View Audit Log',
                 'group' => 'System'
             ],
+            [
+                'name' => Str::slug('Access Backend Management', '-'),
+                'display_name' => 'Access Backend Management',
+                'description' => 'Access Going To Backend Management Dashboard',
+                'group' => 'System'
+            ],
         ]);
 
         $permissions = \App\Permission::all();

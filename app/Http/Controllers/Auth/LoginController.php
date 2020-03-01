@@ -59,7 +59,7 @@ class LoginController extends Controller
             $user->update([
                 'last_login' => Carbon::now()
             ]);
-            if (auth()->user()->hasRole('owner')) {
+            if ($user->can('access-backend-management')) {
                 return $this->sendLoginResponse($request);
             }else{
                 return redirect()->route('app.home')->with('success','Login success');
