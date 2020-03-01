@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\ConstManager\ConstManager;
+use App\Http\Requests\Backend\PasswordRequest;
 use App\Role;
 use App\User;
 use App\Http\Requests\UserRequest;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
 
@@ -20,7 +22,7 @@ class UserController extends Controller
     public function index(User $model)
     {
         if (auth()->user()->can('list-user')) {
-            return view('users.index', ['users' => $model->orderBy('id', ConstManager::DESCENDING)->paginate(ConstManager::PAGINATE)]);
+            return view('backend.users.index', ['users' => $model->orderBy('id', ConstManager::DESCENDING)->paginate(ConstManager::PAGINATE)]);
         } else {
             return redirect()->route('admin.dashboard')->with('info', 'Permission denied!');
         }
@@ -35,7 +37,7 @@ class UserController extends Controller
     {
         if (auth()->user()->can('add-user')) {
             $roles = Role::all();
-            return view('users.create', compact('roles'));
+            return view('backend.users.create', compact('roles'));
         } else {
             return redirect()->route('admin.dashboard')->with('info', 'Permission denied!');
         }
@@ -74,7 +76,8 @@ class UserController extends Controller
     public function edit(User $user)
     {
         if (auth()->user()->can('update-user')) {
-            return view('users.edit', compact('user'));
+            $roles = Role::all();
+            return view('backend.users.edit', compact('user','roles'));
         } else {
             return redirect()->route('admin.dashboard')->with('info', 'Permission denied!');
         }
@@ -115,6 +118,18 @@ class UserController extends Controller
 
             return redirect()->route('admin.user.index')->withStatus(__('User successfully deleted.'));
         } else {
+            return redirect()->route('admin.dashboard')->with('info', 'Permission denied!');
+        }
+    }
+
+    public function changePassword($id,PasswordRequest $request)
+    {
+        if (auth()->user()->can('update-user')){
+            $user = User::find($id);
+            $user->update(['password' => Hash::make($request->get('password'))]);
+
+            return back()->withPasswordStatus(__('Password successfully updated.'));
+        }else{
             return redirect()->route('admin.dashboard')->with('info', 'Permission denied!');
         }
     }

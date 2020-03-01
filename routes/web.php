@@ -36,15 +36,24 @@ Route::group([
 });
 
 Auth::routes();
+//Backend routes
 Route::group([
     'middleware' => 'auth',
     'prefix' => 'admin',
     'as' => 'admin.'
 ], function () {
-    Route::resource('user', 'Admin\UserController', ['except' => ['show']]);
+    //Dashboard routes
     Route::get('/dashboard', 'Admin\DashboardController@index')->name('dashboard');
-    Route::get('profile', ['as' => 'profile.edit', 'uses' => 'Admin\ProfileController@edit']);
-    Route::put('profile', ['as' => 'profile.update', 'uses' => 'Admin\ProfileController@update']);
-    Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'Admin\ProfileController@password']);
+    //User routes
+    Route::resource('user', 'Admin\UserController', ['except' => ['show']]);
+    Route::put('/password/{id}',['as' => 'password.change','uses' => 'Admin\UserController@changePassword']);
+    //Profile routes
+    Route::group([
+        'prefix' => 'profile'
+    ], function () {
+        Route::get('/', ['as' => 'profile.edit', 'uses' => 'Admin\ProfileController@edit']);
+        Route::put('/', ['as' => 'profile.update', 'uses' => 'Admin\ProfileController@update']);
+        Route::put('password', ['as' => 'profile.password', 'uses' => 'Admin\ProfileController@password']);
+    });
 });
 
