@@ -2,10 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f6c99a06-f22e-47f6-9fd0-60dddb5718b7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AbilityController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/RoleController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backend/ability/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backend/ability/partials/cards.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/AbilitySeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/AbilitySeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/users/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/users/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/navbars/navs/auth.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/navbars/navs/auth.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/navbars/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/navbars/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +164,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php&#10;E:/xampp/htdocs/blog_manager/.env" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../social-landing-page" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/backend/ability/partials" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -168,12 +173,13 @@
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2019.3.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\xampp\htdocs\basic" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\xampp\htdocs\blog_manager\resources\views\backend" />
       <recent name="E:\xampp\htdocs\blog_manager\app\Http\Controllers\Admin" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\xampp\htdocs\blog_manager\resources\views\backend\ability\partials" />
+      <recent name="E:\xampp\htdocs\basic" />
     </key>
   </component>
   <component name="RunManager">
@@ -214,7 +220,7 @@
       <workItem from="1582895258445" duration="7978000" />
       <workItem from="1582955935652" duration="23611000" />
       <workItem from="1583028410767" duration="7962000" />
-      <workItem from="1583068731719" duration="6826000" />
+      <workItem from="1583068731719" duration="8363000" />
     </task>
     <servers />
   </component>
@@ -258,11 +264,11 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="480" y="184" key="NewPhpClassDialog/0.0.1366.738/1366.-304.1920.1050@0.0.1366.738" timestamp="1582992340050" />
-    <state x="517" y="292" key="NewPhpFileDialog" timestamp="1582987150610">
+    <state x="517" y="292" key="NewPhpFileDialog" timestamp="1583081443172">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="517" y="292" key="NewPhpFileDialog/0.0.1366.738/-1920.-304.1920.1050@0.0.1366.738" timestamp="1578850955878" />
-    <state x="517" y="292" key="NewPhpFileDialog/0.0.1366.738/1366.-304.1920.1050@0.0.1366.738" timestamp="1582987150610" />
+    <state x="517" y="292" key="NewPhpFileDialog/0.0.1366.738/1366.-304.1920.1050@0.0.1366.738" timestamp="1583081443172" />
     <state x="517" y="292" key="NewPhpFileDialog/0.0.1366.738@0.0.1366.738" timestamp="1581909507846" />
     <state x="476" y="81" key="RollbackChangesDialog" timestamp="1582895843781">
       <screen x="0" y="0" width="1366" height="738" />

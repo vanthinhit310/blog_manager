@@ -91,11 +91,13 @@
 
                     <div class="collapse" id="navbar-examples">
                         <ul class="nav nav-sm flex-column">
+                            @permission('list-ability')
                             <li class="nav-item">
-                                <a class="nav-link" href="">
+                                <a class="nav-link" href="{{ route('admin.ability.index') }}">
                                     Ability
                                 </a>
                             </li>
+                            @endpermission
                             <li class="nav-item">
                                 <a class="nav-link" href="">
                                     Role

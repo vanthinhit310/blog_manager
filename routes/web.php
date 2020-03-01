@@ -55,5 +55,7 @@ Route::group([
         Route::put('/', ['as' => 'profile.update', 'uses' => 'Admin\ProfileController@update']);
         Route::put('password', ['as' => 'profile.password', 'uses' => 'Admin\ProfileController@password']);
     });
+    //Ability routes
+    Route::resource('ability', 'Admin\AbilityController');
 });
 
