@@ -13,6 +13,7 @@ use App\Http\Controllers\Controller;
 
 class UserController extends Controller
 {
+
     /**
      * Display a listing of the users
      *
@@ -36,7 +37,7 @@ class UserController extends Controller
     public function create()
     {
         if (auth()->user()->can('add-user')) {
-            $roles = Role::all();
+            $roles = Role::where('name', '!=', 'owner')->get();
             return view('backend.users.create', compact('roles'));
         } else {
             return redirect()->route('admin.dashboard')->with('info', 'Permission denied!');
@@ -55,9 +56,9 @@ class UserController extends Controller
         if (auth()->user()->can('add-user')) {
             $user = $model->create($request->merge(['password' => Hash::make($request->get('password'))])->all());
 
-            if (!empty($request->role)){
-                $user->attachRole($request->role);
-            }else{
+            if (!empty($request->role)) {
+                $user->syncRoles($request->role);
+            } else {
                 $user->attachRole(ConstManager::USERROLE);
             }
 
@@ -76,8 +77,8 @@ class UserController extends Controller
     public function edit(User $user)
     {
         if (auth()->user()->can('update-user')) {
-            $roles = Role::all();
-            return view('backend.users.edit', compact('user','roles'));
+            $roles = Role::where('name', '!=', 'owner')->get();
+            return view('backend.users.edit', compact('user', 'roles'));
         } else {
             return redirect()->route('admin.dashboard')->with('info', 'Permission denied!');
         }
@@ -97,8 +98,15 @@ class UserController extends Controller
                 $request->merge(['password' => Hash::make($request->get('password'))])
                     ->except([$request->get('password') ? '' : 'password']
                     ));
-
-            return redirect()->route('user.index')->withStatus(__('User successfully updated.'));
+            if (!in_array(ConstManager::USERROLE, (array)$user->getRoles())) {
+                $user->attachRole(ConstManager::USERROLE);
+            }
+           if (!empty($request->get('role'))) {
+               $user->syncRoles($request->get('role'));
+           }else{
+               $user->detachRoles($request->get('role'));
+           }
+            return redirect()->route('admin.user.index')->withStatus(__('User successfully updated.'));
         } else {
             return redirect()->route('admin.dashboard')->with('info', 'Permission denied!');
         }
@@ -122,14 +130,14 @@ class UserController extends Controller
         }
     }
 
-    public function changePassword($id,PasswordRequest $request)
+    public function changePassword($id, PasswordRequest $request)
     {
-        if (auth()->user()->can('update-user')){
+        if (auth()->user()->can('update-user')) {
             $user = User::find($id);
             $user->update(['password' => Hash::make($request->get('password'))]);
 
             return back()->withPasswordStatus(__('Password successfully updated.'));
-        }else{
+        } else {
             return redirect()->route('admin.dashboard')->with('info', 'Permission denied!');
         }
     }

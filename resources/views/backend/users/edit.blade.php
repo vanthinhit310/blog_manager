@@ -20,7 +20,7 @@
                     <div class="card-body">
                         <form method="post" action="{{ route('admin.user.update', $user) }}" autocomplete="off">
                             @csrf
-                            @method('put')
+                            @method('PUT')
 
                             <h6 class="heading-small text-muted mb-4">{{ __('User information') }}</h6>
                             <div class="pl-lg-4">
@@ -68,9 +68,10 @@
                                 <div class="form-group">
                                     <label class="form-control-label" >Choose role assign for this user</label>
                                     @foreach($roles as $role)
-                                        <div class="custom-control custom-radio mb-3">
-                                            <input value="{{@$role->name}}" name="role" {{$role->name == 'user' ? 'checked' : ''}} class="custom-control-input" id="role{{@$role->id}}" type="radio">
-                                            <label class="custom-control-label" for="role{{@$role->id}}">{{@$role->display_name}}</label>
+{{--                                        @dd($role->name,$user->getRoles())--}}
+                                        <div class="custom-control custom-control-alternative custom-checkbox mb-3">
+                                            <input class="custom-control-input" name="role[]" {{in_array(@$role->name,$user->getRoles()) ? 'checked' : ''}} value="{{@$role->id}}" id="customCheck{{@$role->id}}" type="checkbox">
+                                            <label class="custom-control-label" for="customCheck{{@$role->id}}">{{@$role->display_name}}</label>
                                         </div>
                                     @endforeach
                                 </div>

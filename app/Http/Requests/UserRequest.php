@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use App\User;
+use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -23,9 +24,9 @@ class UserRequest extends FormRequest
      *
      * @return array
      */
-    public function rules()
+    public function rules(Request $request)
     {
-        return [
+        $rules = [
             'firstName' => [
                 'required', 'min:3'
             ],
@@ -42,5 +43,25 @@ class UserRequest extends FormRequest
                 $this->route()->user ? 'nullable' : 'required', 'min:8'
             ]
         ];
+        if ($request->method() == 'PUT'){
+            $rules =[
+                'firstName' => [
+                    'required', 'min:3'
+                ],
+                'lastName' => [
+                    'required', 'min:3'
+                ],
+                'email' => [
+                    'required', 'email', Rule::unique((new User)->getTable())->ignore($this->route()->user->id ?? null)
+                ],
+                'mobile' => [
+                    'required', Rule::unique((new User)->getTable())->ignore($this->route()->user->id ?? null)
+                ],
+                'password' => [
+                    $this->route()->user ? 'nullable' : 'required', 'min:8'
+                ]
+            ];
+        }
+        return $rules;
     }
 }

@@ -77,9 +77,9 @@
                                 <div class="form-group">
                                     <label class="form-control-label" >Choose role assign for this user</label>
                                     @foreach($roles as $role)
-                                        <div class="custom-control custom-radio mb-3">
-                                            <input value="{{@$role->name}}" name="role" {{$role->name == 'user' ? 'checked' : ''}} class="custom-control-input" id="role{{@$role->id}}" type="radio">
-                                            <label class="custom-control-label" for="role{{@$role->id}}">{{@$role->display_name}}</label>
+                                        <div class="custom-control custom-control-alternative custom-checkbox mb-3">
+                                            <input class="custom-control-input" name="role[]" {{$role->name == 'user' ? 'checked disabled' : ''}} value="{{@$role->id}}" id="customCheck{{@$role->id}}" type="checkbox">
+                                            <label class="custom-control-label" for="customCheck{{@$role->id}}">{{@$role->display_name}}</label>
                                         </div>
                                     @endforeach
                                 </div>
