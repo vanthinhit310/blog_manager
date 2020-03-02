@@ -60,7 +60,7 @@ class RoleController extends Controller
                     'display_name' => $param['display_name'],
                     'description' => $param['description']
                 ]);
-                if (!empty($param['permissions'])){
+                if (!empty($param['permissions'])) {
                     $role->syncPermissions($param['permissions']);
                 }
                 DB::commit();
@@ -95,7 +95,13 @@ class RoleController extends Controller
     public function edit($id)
     {
         if (auth()->user()->can('update-role')) {
-
+            $role_permission = [];
+            $role = Role::find($id);
+            if (!empty($role->permissions()->allRelatedIds())) {
+                $role_permission = $role->permissions()->allRelatedIds()->toArray();
+            }
+            $permissions = Permission::all()->groupBy('group');
+            return view('backend.role.edit', compact('role', 'role_permission', 'permissions'));
         } else {
             return redirect()->route('admin.dashboard')->withInfo('Permission denied!');
         }
@@ -110,10 +116,30 @@ class RoleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        if (auth()->user()->can('update-role')) {
-
-        } else {
-            return redirect()->route('admin.dashboard')->withInfo('Permission denied!');
+        try {
+            DB::beginTransaction();
+            if (auth()->user()->can('update-role')) {
+                $param = $request->all();
+                $role = Role::find($id);
+                $role->update([
+                    'display_name' => $param['display_name'],
+                    'description' => $param['description']
+                ]);
+                $current_permissions = $role->permissions()->allRelatedIds()->toArray();
+                if (!empty($param['permissions'])) {
+                    $role->syncPermissions($param['permissions']);
+                } else {
+                    $role->detachPermissions($current_permissions);
+                }
+                DB::commit();
+                return redirect()->route('admin.role.index')->withSuccess('Role has been updated successfully!');
+            } else {
+                DB::rollBack();
+                return redirect()->route('admin.dashboard')->withInfo('Permission denied!');
+            }
+        } catch (Throwable $th) {
+            DB::rollBack();
+            dd($th->getMessage());
         }
     }
 
