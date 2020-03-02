@@ -25,7 +25,6 @@
                             </div>
                         @endif
                     </div>
-
                     <div class="table-responsive">
                         <table class="table align-items-center table-flush">
                             <thead class="thead-light">
@@ -35,13 +34,13 @@
                                 <th scope="col">Group</th>
                             </tr>
                             </thead>
-                            <tbody>
+                            <tbody class="list">
                             @foreach ($data as $row)
                                 <tr>
                                     <td>{{ @$row->display_name }}</td>
                                     <td>{{ @$row->description }}</td>
                                     <td>
-                                        <span class="badge badge-primary"> {{@$row->group}}</span>
+                                        <span class="badge badge-default"> {{@$row->group}}</span>
                                     </td>
                                 </tr>
                             @endforeach
