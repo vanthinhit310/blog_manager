@@ -5,12 +5,12 @@
     $(function() {
         $('[data-toggle="sweet-alert"]').on('click', function(){
             var type = $(this).data('sweet-alert');
+            var message = $(this).data('message');
 
             switch (type) {
                 case 'basic':
                     swal({
-                        title: "Here's a message!",
-                        text: 'A few words about this sweet alert ...',
+                        text: message,
                         buttonsStyling: false,
                         confirmButtonClass: 'btn btn-primary'
                     })
@@ -18,8 +18,7 @@
 
                 case 'info':
                     swal({
-                        title: 'Info',
-                        text: 'A few words about this sweet alert ...',
+                        text: message,
                         type: 'info',
                         buttonsStyling: false,
                         confirmButtonClass: 'btn btn-info'
@@ -28,8 +27,7 @@
 
                 case 'info':
                     swal({
-                        title: 'Info',
-                        text: 'A few words about this sweet alert ...',
+                        text: message,
                         type: 'info',
                         buttonsStyling: false,
                         confirmButtonClass: 'btn btn-info'
@@ -38,8 +36,7 @@
 
                 case 'success':
                     swal({
-                        title: 'Success',
-                        text: 'A few words about this sweet alert ...',
+                        text: message,
                         type: 'success',
                         buttonsStyling: false,
                         confirmButtonClass: 'btn btn-success'
@@ -48,8 +45,7 @@
 
                 case 'warning':
                     swal({
-                        title: 'Warning',
-                        text: 'A few words about this sweet alert ...',
+                        text: message,
                         type: 'warning',
                         buttonsStyling: false,
                         confirmButtonClass: 'btn btn-warning'
@@ -58,8 +54,7 @@
 
                 case 'question':
                     swal({
-                        title: 'Are you sure?',
-                        text: 'A few words about this sweet alert ...',
+                        text: message,
                         type: 'question',
                         buttonsStyling: false,
                         confirmButtonClass: 'btn btn-default'
@@ -68,8 +63,7 @@
 
                 case 'confirm':
                     swal({
-                        title: 'Are you sure?',
-                        text: "You won't be able to revert this!",
+                        text: message,
                         type: 'warning',
                         showCancelButton: true,
                         buttonsStyling: false,
@@ -78,7 +72,6 @@
                         cancelButtonClass: 'btn btn-secondary'
                     }).then((result) => {
                         if (result.value) {
-                            // Show confirmation
                             swal({
                                 title: 'Deleted!',
                                 text: 'Your file has been deleted.',

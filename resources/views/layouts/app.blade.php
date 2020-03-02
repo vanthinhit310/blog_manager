@@ -16,9 +16,8 @@
     <link href="{{ asset('argon') }}/vendor/nucleo/css/nucleo.css" rel="stylesheet">
     <link href="{{ asset('argon') }}/vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
     <!-- Page plugins -->
-    <link rel="stylesheet" href="../../assets/vendor/animate.css/animate.min.css">
-    <link rel="stylesheet" href="../../assets/vendor/sweetalert2/dist/sweetalert2.min.css">
-    <link href="{{ asset('css/toastr.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('argon')}}/vendor/animate.css/animate.min.css">
+    <link rel="stylesheet" href="{{asset('argon')}}/vendor/sweetalert2/dist/sweetalert2.min.css">
     <!-- Argon CSS -->
     <link type="text/css" href="{{ asset('argon') }}/css/argon.css?v=1.1.0" rel="stylesheet">
 </head>
@@ -46,7 +45,6 @@
 <script src="{{ asset('argon') }}/vendor/js-cookie/js.cookie.js"></script>
 <script src="{{ asset('argon') }}/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
 <script src="{{ asset('argon') }}/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
-<script src="{{ asset('js/toastr.min.js') }}"></script>
 <!-- Optional JS -->
 <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.min.js"></script>
 <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.extension.js"></script>
@@ -57,6 +55,8 @@
 
 <!-- Argon JS -->
 <script src="{{ asset('argon') }}/js/argon.js?v=1.1.0"></script>
+<script src="{{ asset('argon') }}/js/alert.js?v=1.1.0"></script>
+<script src="{{ asset('js/common.js?v=1.1.0') }}"></script>
 @include('layouts.alert')
 </body>
 </html>
