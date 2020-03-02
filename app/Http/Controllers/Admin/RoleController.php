@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\ConstManager\ConstManager;
 use App\Http\Controllers\Controller;
+use App\Permission;
 use App\Role;
 use Illuminate\Http\Request;
 
@@ -32,7 +33,8 @@ class RoleController extends Controller
     public function create()
     {
         if (auth()->user()->can('add-role')){
-
+            $permissions = Permission::all()->groupBy('group');
+            return view('backend.role.create', compact('permissions'));
         }else{
             return redirect()->route('admin.dashboard')->withInfo('Permission denied!');
         }
