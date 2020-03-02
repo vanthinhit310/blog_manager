@@ -152,7 +152,8 @@ class RoleController extends Controller
     public function destroy($id)
     {
         if (auth()->user()->can('destroy-role')) {
-
+            Role::find($id)->delete();
+            return redirect()->route('admin.role.index')->withSuccess('Role has been destroyed successfully!');
         } else {
             return redirect()->route('admin.dashboard')->withInfo('Permission denied!');
         }
