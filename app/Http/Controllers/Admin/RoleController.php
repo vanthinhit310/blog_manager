@@ -4,9 +4,12 @@ namespace App\Http\Controllers\Admin;
 
 use App\ConstManager\ConstManager;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Backend\RoleRequest;
 use App\Permission;
 use App\Role;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class RoleController extends Controller
 {
@@ -17,10 +20,10 @@ class RoleController extends Controller
      */
     public function index()
     {
-        if (auth()->user()->can('list-role')){
-            $data = Role::where('name','!=','owner')->paginate(ConstManager::PAGINATE);
+        if (auth()->user()->can('list-role')) {
+            $data = Role::where('name', '!=', 'owner')->paginate(ConstManager::PAGINATE);
             return view('backend.role.index', compact('data'));
-        }else{
+        } else {
             return redirect()->route('admin.dashboard')->withInfo('Permission denied!');
         }
     }
@@ -32,10 +35,10 @@ class RoleController extends Controller
      */
     public function create()
     {
-        if (auth()->user()->can('add-role')){
+        if (auth()->user()->can('add-role')) {
             $permissions = Permission::all()->groupBy('group');
             return view('backend.role.create', compact('permissions'));
-        }else{
+        } else {
             return redirect()->route('admin.dashboard')->withInfo('Permission denied!');
         }
     }
@@ -43,22 +46,39 @@ class RoleController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(RoleRequest $request)
     {
-        if (auth()->user()->can('add-role')){
-
-        }else{
-            return redirect()->route('admin.dashboard')->withInfo('Permission denied!');
+        try {
+            DB::beginTransaction();
+            if (auth()->user()->can('add-role')) {
+                $param = $request->all();
+                $role = Role::create([
+                    'name' => Str::slug($param['display_name'], '-'),
+                    'display_name' => $param['display_name'],
+                    'description' => $param['description']
+                ]);
+                if (!empty($param['permissions'])){
+                    $role->syncPermissions($param['permissions']);
+                }
+                DB::commit();
+                return redirect()->route('admin.role.index')->withSuccess('Role has been create successfully!');
+            } else {
+                DB::rollBack();
+                return redirect()->route('admin.dashboard')->withInfo('Permission denied!');
+            }
+        } catch (Throwable $th) {
+            DB::rollBack();
+            dd($th->getMessage());
         }
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -69,14 +89,14 @@ class RoleController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        if (auth()->user()->can('update-role')){
+        if (auth()->user()->can('update-role')) {
 
-        }else{
+        } else {
             return redirect()->route('admin.dashboard')->withInfo('Permission denied!');
         }
     }
@@ -84,15 +104,15 @@ class RoleController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        if (auth()->user()->can('update-role')){
+        if (auth()->user()->can('update-role')) {
 
-        }else{
+        } else {
             return redirect()->route('admin.dashboard')->withInfo('Permission denied!');
         }
     }
@@ -100,14 +120,14 @@ class RoleController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        if (auth()->user()->can('destroy-role')){
+        if (auth()->user()->can('destroy-role')) {
 
-        }else{
+        } else {
             return redirect()->route('admin.dashboard')->withInfo('Permission denied!');
         }
     }

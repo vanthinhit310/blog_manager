@@ -21,7 +21,6 @@
                         <form method="post" action="{{ route('admin.role.store') }}" autocomplete="off">
                             @csrf
 
-                            <h6 class="heading-small text-muted mb-4">Role information</h6>
                             <div class="pl-lg-6">
                                 <div class="form-group{{ $errors->has('display_name') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-dl-name">Role name</label>
@@ -33,13 +32,13 @@
                                         </span>
                                     @endif
                                 </div>
-                                <div class="form-group{{ $errors->has('desceiption') ? ' has-danger' : '' }}">
+                                <div class="form-group{{ $errors->has('description') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="role-dr">Role description</label>
-                                    <textarea class="form-control" name="description" id="role-dr" rows="3">{{ old('desceiption') ?? '' }}</textarea>
+                                    <textarea class="form-control {{ $errors->has('description') ? ' is-invalid' : '' }}" name="description" id="role-dr" rows="3">{{ old('description') ?? '' }}</textarea>
 
-                                    @if ($errors->has('desceiption'))
+                                    @if ($errors->has('description'))
                                         <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('desceiption') }}</strong>
+                                            <strong>{{ $errors->first('description') }}</strong>
                                         </span>
                                     @endif
                                 </div>
