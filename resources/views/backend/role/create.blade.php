@@ -49,7 +49,7 @@
                                         @foreach($permissions as $group => $permission)
                                             <ul class="list-group">
                                                 <li class="list-group-item mb-3">
-                                                    <div class="mb-2 badge badge-default">{{@$group}}</div>
+                                                    <div class="mb-2 badge badge-default">{{@$group}} Group</div>
                                                     <div class="row">
                                                         @foreach($permission as $p)
                                                             <div class="col-xl-3 col-md-6">
