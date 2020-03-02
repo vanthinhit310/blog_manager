@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\ConstManager\ConstManager;
 use App\Http\Controllers\Controller;
+use App\Role;
 use Illuminate\Http\Request;
 
 class RoleController extends Controller
@@ -14,7 +16,12 @@ class RoleController extends Controller
      */
     public function index()
     {
-
+        if (auth()->user()->can('list-role')){
+            $data = Role::where('name','!=','owner')->paginate(ConstManager::PAGINATE);
+            return view('backend.role.index', compact('data'));
+        }else{
+            return redirect()->route('admin.dashboard')->withInfo('Permission denied!');
+        }
     }
 
     /**
@@ -24,7 +31,11 @@ class RoleController extends Controller
      */
     public function create()
     {
-        //
+        if (auth()->user()->can('add-role')){
+
+        }else{
+            return redirect()->route('admin.dashboard')->withInfo('Permission denied!');
+        }
     }
 
     /**
@@ -35,7 +46,11 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if (auth()->user()->can('add-role')){
+
+        }else{
+            return redirect()->route('admin.dashboard')->withInfo('Permission denied!');
+        }
     }
 
     /**
@@ -57,7 +72,11 @@ class RoleController extends Controller
      */
     public function edit($id)
     {
-        //
+        if (auth()->user()->can('update-role')){
+
+        }else{
+            return redirect()->route('admin.dashboard')->withInfo('Permission denied!');
+        }
     }
 
     /**
@@ -69,7 +88,11 @@ class RoleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        if (auth()->user()->can('update-role')){
+
+        }else{
+            return redirect()->route('admin.dashboard')->withInfo('Permission denied!');
+        }
     }
 
     /**
@@ -80,6 +103,10 @@ class RoleController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if (auth()->user()->can('destroy-role')){
+
+        }else{
+            return redirect()->route('admin.dashboard')->withInfo('Permission denied!');
+        }
     }
 }

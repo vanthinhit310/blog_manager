@@ -57,5 +57,8 @@ Route::group([
     });
     //Ability routes
     Route::resource('ability', 'Admin\AbilityController');
+
+    //Role routes
+    Route::resource('role', 'Admin\RoleController');
 });
 

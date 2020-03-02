@@ -38,7 +38,7 @@
                             <ul class="nav nav-sm flex-column">
                                 @permission('list-role')
                                 <li class="nav-item">
-                                    <a href="javascript:;" class="nav-link">Role</a>
+                                    <a href="{{ route('admin.role.index')}}" class="nav-link">Role</a>
                                 </li>
                                 @endpermission
                                 @permission('list-ability')
