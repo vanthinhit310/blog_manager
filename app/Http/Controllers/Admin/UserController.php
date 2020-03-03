@@ -7,7 +7,7 @@ use App\Http\Requests\Backend\PasswordRequest;
 use App\Role;
 use App\User;
 use App\Http\Requests\UserRequest;
-use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
 
@@ -23,7 +23,16 @@ class UserController extends Controller
     public function index(User $model)
     {
         if (auth()->user()->can('list-user')) {
-            return view('backend.users.index', ['users' => $model->orderBy('id', ConstManager::DESCENDING)->paginate(ConstManager::PAGINATE)]);
+            $props = [];
+            $recent_week_login = Carbon::now()->subDay(7);
+            $recent_month_login = Carbon::now()->subDay(30);
+            $props['last_login_week'] = User::whereBetween('last_login',[$recent_week_login,Carbon::now()])->get()->count();
+            $props['last_login_month'] = User::whereBetween('last_login',[$recent_month_login,Carbon::now()])->get()->count();
+            $props['last_register_month'] = User::whereBetween('register_at',[$recent_month_login,Carbon::now()])->get()->count();
+            return view('backend.users.index', [
+                'users' => $model->orderBy('id', ConstManager::DESCENDING)->paginate(ConstManager::PAGINATE),
+                'props' => $props
+            ]);
         } else {
             return redirect()->route('admin.dashboard')->with('info', 'Permission denied!');
         }

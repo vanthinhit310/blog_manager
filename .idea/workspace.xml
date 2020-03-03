@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f6c99a06-f22e-47f6-9fd0-60dddb5718b7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/backend/users/partials/card.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/RoleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/RoleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/role/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/role/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/role/partials/cards.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/role/partials/cards.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/Testcommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/Testcommand.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/users/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/users/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -224,7 +224,7 @@
       <workItem from="1583128696592" duration="1802000" />
       <workItem from="1583159081596" duration="14583000" />
       <workItem from="1583199715426" duration="88000" />
-      <workItem from="1583245774825" duration="4915000" />
+      <workItem from="1583245774825" duration="9535000" />
     </task>
     <servers />
   </component>
@@ -235,6 +235,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="275" y="9" width="816" height="729" key="#Intentions" timestamp="1583256485447">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="275" y="9" width="816" height="729" key="#Intentions/0.0.1366.738/1366.-304.1920.1050@0.0.1366.738" timestamp="1583256485447" />
     <state x="0" y="63" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1583174361081">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -272,11 +276,11 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="480" y="184" key="NewPhpClassDialog/0.0.1366.738/1366.-304.1920.1050@0.0.1366.738" timestamp="1582992340050" />
-    <state x="517" y="292" key="NewPhpFileDialog" timestamp="1583081443172">
+    <state x="517" y="292" key="NewPhpFileDialog" timestamp="1583256974228">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="517" y="292" key="NewPhpFileDialog/0.0.1366.738/-1920.-304.1920.1050@0.0.1366.738" timestamp="1578850955878" />
-    <state x="517" y="292" key="NewPhpFileDialog/0.0.1366.738/1366.-304.1920.1050@0.0.1366.738" timestamp="1583081443172" />
+    <state x="517" y="292" key="NewPhpFileDialog/0.0.1366.738/1366.-304.1920.1050@0.0.1366.738" timestamp="1583256974228" />
     <state x="517" y="292" key="NewPhpFileDialog/0.0.1366.738@0.0.1366.738" timestamp="1581909507846" />
     <state x="476" y="81" key="RollbackChangesDialog" timestamp="1582895843781">
       <screen x="0" y="0" width="1366" height="738" />

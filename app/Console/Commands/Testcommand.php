@@ -41,13 +41,10 @@ class Testcommand extends Command
     {
 //        Schema::disableForeignKeyConstraints();
 //        Schema::enableForeignKeyConstraints();
-        $faker = Factory::create();
-        foreach (User::whereNull('created_at')->get()->chunk(100) as $users){
+        foreach (User::where('id','>',7855)->get()->chunk(100) as $users){
             foreach ($users as $user){
-                $user->update([
-                    'created_at' => $faker->date($format = 'Y-m-d', $max = 'now').' '.$faker->time($format = 'H:i:s', $max = 'now')
-                ]);
-                $this->info('Success with user =========================== '.$user->firstName);
+                $user->attachRole('user');
+                dump($user->id);
             }
         }
     }
