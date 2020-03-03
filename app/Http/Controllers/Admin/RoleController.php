@@ -23,10 +23,10 @@ class RoleController extends Controller
     {
         if (auth()->user()->can('list-role')) {
             $props = [];
-            $data = Role::where('name', '!=', 'owner')->paginate(ConstManager::PAGINATE);
             $props['user'] = User::whereRoleIs('user')->get()->count();
             $props['staff'] = User::whereRoleIs('admin')->get()->count();
             $props['other'] = User::whereRoleIsOther()->get()->count();
+            $data = Role::where('name', '!=', 'owner')->paginate(ConstManager::PAGINATE);
             return view('backend.role.index', compact('data','props'));
         } else {
             return redirect()->route('admin.dashboard')->withInfo('Permission denied!');
