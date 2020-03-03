@@ -28,10 +28,35 @@
                             <span class="nav-link-text">Dashboard</span>
                         </a>
                     </li>
+                    @permission('list-post')
+                    <li class="nav-item">
+                        <a class="nav-link" href="#navbar-news" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-examples">
+                            <i class="fas fa-newspaper text-warning"></i>
+                            <span class="nav-link-text">Post Management</span>
+                        </a>
+                        <div class="collapse" id="navbar-news">
+                            <ul class="nav nav-sm flex-column">
+                                <li class="nav-item">
+                                    <a href="{{ route('admin.role.index')}}" class="nav-link">News</a>
+                                </li>
+                                @permission('list-category')
+                                <li class="nav-item">
+                                    <a href="{{ route('admin.ability.index') }}" class="nav-link">Categories</a>
+                                </li>
+                                @endpermission
+                                @permission('list-tag')
+                                <li class="nav-item">
+                                    <a href="{{ route('admin.ability.index') }}" class="nav-link">Tags</a>
+                                </li>
+                                @endpermission
+                            </ul>
+                        </div>
+                    </li>
+                    @endpermission
                     @permission('list-role')
                     <li class="nav-item">
                         <a class="nav-link" href="#navbar-permission" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-examples">
-                            <i class="ni ni-ungroup text-orange"></i>
+                            <i class="fas fa-radiation text-success"></i>
                             <span class="nav-link-text">Permissions</span>
                         </a>
                         <div class="collapse" id="navbar-permission">
@@ -53,7 +78,7 @@
                     @permission('list-user')
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('admin.user.index') }}">
-                            <i class="ni ni-archive-2 text-orange"></i>
+                            <i class=" fa fa-user text-orange"></i>
                             <span class="nav-link-text">User</span>
                         </a>
                     </li>
