@@ -17,26 +17,93 @@
             </div>
             <!-- Card stats -->
             <div class="row">
-                <div class="col-xl-12 col-md-12">
+                <div class="col-xl-3 col-md-6">
                     <div class="card card-stats">
                         <!-- Card body -->
                         <div class="card-body">
                             <div class="row">
                                 <div class="col">
-                                    <h5 class="card-title text-uppercase text-muted mb-0">Total Ability</h5>
+                                    <h5 class="card-title text-uppercase text-danger mb-0">Total Role</h5>
                                     <span class="h2 font-weight-bold mb-0">{{ count(@$data) }}</span>
                                 </div>
+
                                 <div class="col-auto">
                                     <div class="icon icon-shape bg-gradient-red text-white rounded-circle shadow">
-                                        <i class="ni ni-ruler-pencil"></i>
+                                        <i class="ni ni-atom"></i>
                                     </div>
                                 </div>
                             </div>
                             <p class="mt-3 mb-0 text-sm">
-                                <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
-                                <span class="text-nowrap">Since last month</span>
+                                <span class="text-nowrap">Total role of application</span>
                             </p>
                         </div>
+
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6">
+                    <div class="card card-stats">
+                        <!-- Card body -->
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col">
+                                    <h5 class="card-title text-uppercase text-danger mb-0">Staff</h5>
+                                    <span class="h2 font-weight-bold mb-0">{{ @$props['staff'] ?? 0 }} User</span>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="icon icon-shape bg-gradient-red text-white rounded-circle shadow">
+                                        <i class="ni ni-spaceship"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="mt-3 mb-0 text-sm">
+                                <span class="text-nowrap">Number user with admin staff role of the application</span>
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6">
+                    <div class="card card-stats">
+                        <!-- Card body -->
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col">
+                                    <h5 class="card-title text-uppercase text-danger mb-0">Other</h5>
+                                    <span class="h2 font-weight-bold mb-0">{{ @$props['other'] }} User</span>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="icon icon-shape bg-gradient-red text-white rounded-circle shadow">
+                                        <i class="ni ni-app"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="mt-3 mb-0 text-sm">
+                                <span class="text-nowrap">Number user with other role of the application</span>
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6">
+                    <div class="card card-stats">
+                        <!-- Card body -->
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col">
+                                    <h5 class="card-title text-uppercase text-danger mb-0">User</h5>
+                                    <span class="h2 font-weight-bold mb-0">{{ @$props['user'] }} User</span>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="icon icon-shape bg-gradient-red text-white rounded-circle shadow">
+                                        <i class="ni ni-user-run"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="mt-3 mb-0 text-sm">
+                                <span class="text-nowrap">Number user with basic role of the application</span>
+                            </p>
+                        </div>
+
                     </div>
                 </div>
             </div>

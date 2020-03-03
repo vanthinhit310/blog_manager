@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Backend\RoleRequest;
 use App\Permission;
 use App\Role;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
@@ -21,8 +22,12 @@ class RoleController extends Controller
     public function index()
     {
         if (auth()->user()->can('list-role')) {
+            $props = [];
             $data = Role::where('name', '!=', 'owner')->paginate(ConstManager::PAGINATE);
-            return view('backend.role.index', compact('data'));
+            $props['user'] = User::whereRoleIs('user')->get()->count();
+            $props['staff'] = User::whereRoleIs('admin')->get()->count();
+            $props['other'] = User::whereRoleIsOther()->get()->count();
+            return view('backend.role.index', compact('data','props'));
         } else {
             return redirect()->route('admin.dashboard')->withInfo('Permission denied!');
         }

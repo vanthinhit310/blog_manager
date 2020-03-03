@@ -2,7 +2,6 @@
 
 @section('content')
     @include('backend.role.partials.header', ['title' => 'Edit role'])
-
     <div class="container-fluid mt--7">
         <div class="row">
             <div class="col-xl-12 order-xl-1">

@@ -2,9 +2,9 @@
 
 namespace App;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Laratrust\Helper;
 use Laratrust\Traits\LaratrustUserTrait;
 use OwenIt\Auditing\Contracts\Auditable;
 
@@ -57,5 +57,13 @@ class User extends Authenticatable implements Auditable
     ];
     public function getFullNameAttribute() {
         return ucfirst($this->firstName) . ' ' . ucfirst($this->lastName);
+    }
+
+    public function scopeWhereRoleIsOther()
+    {
+        return $this->whereHas('roles', function ($roleQuery){
+            $roleQuery->where('name','!=','admin')
+                ->where('name','!=','user');
+        });
     }
 }

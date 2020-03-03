@@ -3,10 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="f6c99a06-f22e-47f6-9fd0-60dddb5718b7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/argon/js/demo.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/argon/js/alert.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/argon/js/demo.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/argon/js/alert.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/users/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/users/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/RoleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/RoleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/role/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/role/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/role/partials/cards.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/role/partials/cards.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -223,6 +223,8 @@
       <workItem from="1583113117637" duration="2931000" />
       <workItem from="1583128696592" duration="1802000" />
       <workItem from="1583159081596" duration="14583000" />
+      <workItem from="1583199715426" duration="88000" />
+      <workItem from="1583245774825" duration="4915000" />
     </task>
     <servers />
   </component>
@@ -237,10 +239,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="0" y="63" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.738/1366.-304.1920.1050@0.0.1366.738" timestamp="1583174361081" />
-    <state x="413" y="125" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1582991782357">
+    <state x="413" y="125" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1583247324568">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="413" y="125" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.738/1366.-304.1920.1050@0.0.1366.738" timestamp="1582991782357" />
+    <state x="413" y="125" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.738/1366.-304.1920.1050@0.0.1366.738" timestamp="1583247324568" />
     <state x="459" y="281" key="ComposerInitDialogKey" timestamp="1578851714200">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
