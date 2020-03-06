@@ -6,7 +6,6 @@ use App\ConstManager\ConstManager;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Backend\CategoryRequest;
 use App\Model\Category;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class CategoryController extends Controller
