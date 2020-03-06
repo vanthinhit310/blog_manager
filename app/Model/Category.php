@@ -4,9 +4,11 @@ namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 use OwenIt\Auditing\Contracts\Auditable;
+use Cviebrock\EloquentSluggable\Sluggable;
 class Category extends Model implements Auditable
 {
     use \OwenIt\Auditing\Auditable;
+    use Sluggable;
 
     protected $table = 'categories';
 
@@ -18,4 +20,17 @@ class Category extends Model implements Auditable
         'created_at',
         'updated_at'
     ];
+
+    /**
+     * @inheritDoc
+     */
+    public function sluggable(): array
+    {
+        // TODO: Implement sluggable() method.
+        return [
+            'slug' => [
+                'source' => 'title'
+            ]
+        ];
+    }
 }

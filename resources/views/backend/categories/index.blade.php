@@ -40,11 +40,11 @@
                                                 <i class="fas fa-ellipsis-v"></i>
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                                <form action="{{ route('admin.user.destroy', @$user) }}" method="post">
+                                                <form action="{{ route('admin.user.destroy', @$row) }}" method="post">
                                                     @csrf
                                                     @method('delete')
                                                     @permission('update-category')
-                                                    <a class="dropdown-item" href="{{ route('admin.user.edit', @$user) }}">{{ __('Edit') }}</a>
+                                                    <a class="dropdown-item" href="{{ route('admin.user.edit', @$row) }}">{{ __('Edit') }}</a>
                                                     @endpermission
                                                     @permission('destroy-category')
                                                     <button type="button" class="dropdown-item" onclick="confirm('{{ __("Are you sure you want to delete this user?") }}') ? this.parentElement.submit() : ''">

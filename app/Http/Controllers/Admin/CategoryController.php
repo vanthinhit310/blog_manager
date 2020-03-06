@@ -4,18 +4,22 @@ namespace App\Http\Controllers\Admin;
 
 use App\ConstManager\ConstManager;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Backend\CategoryRequest;
 use App\Model\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CategoryController extends Controller
 {
 
     protected $model;
+
     public function __construct(Category $model)
     {
         $this->middleware('auth');
         $this->model = $model;
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -23,10 +27,10 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        if (auth()->user()->can('list-category')){
+        if (auth()->user()->can('list-category')) {
             $data = $this->model->paginate(ConstManager::PAGINATE);
-            return view('backend.categories.index',compact('data'));
-        }else{
+            return view('backend.categories.index', compact('data'));
+        } else {
             return redirect()->route('admin.dashboard')->withInfo('Permission denied!');
         }
     }
@@ -38,9 +42,9 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        if (auth()->user()->can('add-category')){
+        if (auth()->user()->can('add-category')) {
             return view('backend.categories.create');
-        }else{
+        } else {
             return redirect()->route('admin.dashboard')->withInfo('Permission denied!');
         }
     }
@@ -48,22 +52,32 @@ class CategoryController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CategoryRequest $request)
     {
-        if (auth()->user()->can('list-category')){
-
-        }else{
-            return redirect()->route('admin.dashboard')->withInfo('Permission denied!');
+        try {
+            DB::beginTransaction();
+            if (auth()->user()->can('add-category')) {
+                $this->model->create($request->all());
+                $message = sprintf('%s has been crated successfully', $request->title);
+                DB::commit();
+                return redirect()->route('admin.category.index')->withSuccess($message);
+            } else {
+                DB::rollBack();
+                return redirect()->route('admin.dashboard')->withInfo('Permission denied!');
+            }
+        } catch (Throwable $th) {
+            DB::rollBack();
+            dd($th->getMessage());
         }
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -74,14 +88,14 @@ class CategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        if (auth()->user()->can('list-category')){
+        if (auth()->user()->can('list-category')) {
 
-        }else{
+        } else {
             return redirect()->route('admin.dashboard')->withInfo('Permission denied!');
         }
     }
@@ -89,15 +103,15 @@ class CategoryController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        if (auth()->user()->can('list-category')){
+        if (auth()->user()->can('list-category')) {
 
-        }else{
+        } else {
             return redirect()->route('admin.dashboard')->withInfo('Permission denied!');
         }
     }
@@ -105,14 +119,14 @@ class CategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        if (auth()->user()->can('list-category')){
+        if (auth()->user()->can('list-category')) {
 
-        }else{
+        } else {
             return redirect()->route('admin.dashboard')->withInfo('Permission denied!');
         }
     }

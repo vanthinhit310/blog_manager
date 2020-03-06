@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f6c99a06-f22e-47f6-9fd0-60dddb5718b7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Requests/Backend/CategoryRequest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en/categories.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/categories.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/categories/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/categories/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Model/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Category.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/backend/categories/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/categories/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -230,7 +229,7 @@
       <workItem from="1583199715426" duration="88000" />
       <workItem from="1583245774825" duration="11326000" />
       <workItem from="1583286660891" duration="24000" />
-      <workItem from="1583507713377" duration="7036000" />
+      <workItem from="1583507713377" duration="8134000" />
     </task>
     <servers />
   </component>
@@ -249,10 +248,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="0" y="63" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.738/1366.-304.1920.1050@0.0.1366.738" timestamp="1583174361081" />
-    <state x="413" y="125" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1583247324568">
+    <state x="413" y="125" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1583516176548">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="413" y="125" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.738/1366.-304.1920.1050@0.0.1366.738" timestamp="1583247324568" />
+    <state x="413" y="125" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.738/1366.-304.1920.1050@0.0.1366.738" timestamp="1583516176548" />
     <state x="459" y="281" key="ComposerInitDialogKey" timestamp="1578851714200">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
