@@ -40,7 +40,7 @@
                                                 <i class="fas fa-ellipsis-v"></i>
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                                <form action="{{ route('admin.user.destroy', @$row) }}" method="post">
+                                                <form action="{{ route('admin.category.destroy', $row) }}" method="post">
                                                     @csrf
                                                     @method('delete')
                                                     @permission('update-category')
