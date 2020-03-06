@@ -60,5 +60,8 @@ Route::group([
 
     //Role routes
     Route::resource('role', 'Admin\RoleController');
+
+    //category route
+    Route::resource('category', 'Admin\CategoryController');
 });
 

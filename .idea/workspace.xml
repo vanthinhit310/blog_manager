@@ -2,14 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f6c99a06-f22e-47f6-9fd0-60dddb5718b7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/lang/en/categories.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backend/categories/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backend/categories/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backend/categories/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/PostCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/PostCategory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/PostComment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/PostComment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/PostMeta.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/PostMeta.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/PostTag.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/PostTag.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Tag.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Tag.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,6 +147,8 @@
       <path value="$PROJECT_DIR$/vendor/laravel-frontend-presets/argon" />
       <path value="$PROJECT_DIR$/vendor/owen-it/laravel-auditing" />
       <path value="$PROJECT_DIR$/vendor/laravel/helpers" />
+      <path value="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable" />
+      <path value="$PROJECT_DIR$/vendor/cocur/slugify" />
     </include_path>
   </component>
   <component name="ProjectId" id="1WIvVETxXChp5QBaG2CspPRrlih" />
@@ -230,7 +234,7 @@
       <workItem from="1583199715426" duration="88000" />
       <workItem from="1583245774825" duration="11326000" />
       <workItem from="1583286660891" duration="24000" />
-      <workItem from="1583507713377" duration="3465000" />
+      <workItem from="1583507713377" duration="5165000" />
     </task>
     <servers />
   </component>
@@ -282,11 +286,11 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="480" y="184" key="NewPhpClassDialog/0.0.1366.738/1366.-304.1920.1050@0.0.1366.738" timestamp="1582992340050" />
-    <state x="517" y="292" key="NewPhpFileDialog" timestamp="1583256974228">
+    <state x="517" y="292" key="NewPhpFileDialog" timestamp="1583512509974">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="517" y="292" key="NewPhpFileDialog/0.0.1366.738/-1920.-304.1920.1050@0.0.1366.738" timestamp="1578850955878" />
-    <state x="517" y="292" key="NewPhpFileDialog/0.0.1366.738/1366.-304.1920.1050@0.0.1366.738" timestamp="1583256974228" />
+    <state x="517" y="292" key="NewPhpFileDialog/0.0.1366.738/1366.-304.1920.1050@0.0.1366.738" timestamp="1583512509974" />
     <state x="517" y="292" key="NewPhpFileDialog/0.0.1366.738@0.0.1366.738" timestamp="1581909507846" />
     <state x="476" y="81" key="RollbackChangesDialog" timestamp="1582895843781">
       <screen x="0" y="0" width="1366" height="738" />

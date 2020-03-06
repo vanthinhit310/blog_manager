@@ -12,6 +12,7 @@
         "ext-curl": "*",
         "ext-json": "*",
         "arcanedev/log-viewer": "~5.0",
+        "cviebrock/eloquent-sluggable": "~6.0",
         "fideloper/proxy": "^4.0",
         "laravel-frontend-presets/argon": "^1.0",
         "laravel/framework": "^6.2",
