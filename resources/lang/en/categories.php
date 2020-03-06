@@ -7,5 +7,7 @@ return [
     'categories_information' => 'Categories Information',
     'title' => 'Title',
     'meta_title' => 'Meta title',
-    'content' => 'Content'
+    'content' => 'Content',
+    'message_delete' => 'Are you sure you want to delete this category?',
+    'edit_categories' => 'Edit Categories',
 ];

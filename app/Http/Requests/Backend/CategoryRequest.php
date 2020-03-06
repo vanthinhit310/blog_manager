@@ -40,12 +40,12 @@ class CategoryRequest extends FormRequest
             $rules = [
                 'title' => [
                     'required',
-                    Rule::unique((new Category())->getTable())->ignore($this->route()->user->id ?? null)
+                    Rule::unique((new Category())->getTable())->ignore($this->route()->category->id ?? null)
                 ],
                 'meta_title' => [
                     'required',
                     'max:70',
-                    Rule::unique((new Category())->getTable())->ignore($this->route()->user->id ?? null)
+                    Rule::unique((new Category())->getTable())->ignore($this->route()->category->id ?? null)
                 ]
             ];
         }

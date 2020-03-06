@@ -45,7 +45,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="form-control-label">{{__('categories.content')}}</label>
-                                    <textarea class="form-control form-control-alternative{{ $errors->has('content') ? ' is-invalid' : '' }}" rows="3"></textarea>
+                                    <textarea name="content" class="form-control form-control-alternative{{ $errors->has('content') ? ' is-invalid' : '' }}" rows="3"></textarea>
                                 </div>
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-success mt-4">{{ __('Save') }}</button>

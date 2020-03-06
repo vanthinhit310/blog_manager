@@ -93,10 +93,15 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        if (auth()->user()->can('list-category')) {
-
-        } else {
-            return redirect()->route('admin.dashboard')->withInfo('Permission denied!');
+        try {
+            if (auth()->user()->can('list-category')) {
+                $data = $this->model->findOrFail($id);
+                return view('backend.categories.edit', compact('data'));
+            } else {
+                return redirect()->route('admin.dashboard')->withInfo('Permission denied!');
+            }
+        } catch (Throwable $th) {
+            dd($th->getMessage());
         }
     }
 
@@ -107,12 +112,21 @@ class CategoryController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CategoryRequest $request, Category $category)
     {
-        if (auth()->user()->can('list-category')) {
-
-        } else {
-            return redirect()->route('admin.dashboard')->withInfo('Permission denied!');
+        try {
+            DB::beginTransaction();
+            if (auth()->user()->can('update-category')) {
+                $category->update($request->all());
+                DB::commit();
+                return redirect()->route('admin.category.index')->withSuccess($request->title . __('core.update_success'));
+            } else {
+                DB::rollBack();
+                return redirect()->route('admin.dashboard')->withInfo('Permission denied!');
+            }
+        } catch (Throwable $th) {
+            DB::rollBack();
+            dd($th->getMessage());
         }
     }
 

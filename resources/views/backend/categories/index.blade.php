@@ -44,10 +44,10 @@
                                                     @csrf
                                                     @method('delete')
                                                     @permission('update-category')
-                                                    <a class="dropdown-item" href="{{ route('admin.user.edit', @$row) }}">{{ __('Edit') }}</a>
+                                                    <a class="dropdown-item" href="{{ route('admin.category.edit', @$row) }}">{{ __('Edit') }}</a>
                                                     @endpermission
                                                     @permission('destroy-category')
-                                                    <button type="button" class="dropdown-item" onclick="confirm('{{ __("Are you sure you want to delete this user?") }}') ? this.parentElement.submit() : ''">
+                                                    <button type="button" class="dropdown-item" onclick="confirm('{{ __('categories.message_delete') }}') ? this.parentElement.submit() : ''">
                                                         {{ __('Delete') }}
                                                     </button>
                                                     @endpermission
