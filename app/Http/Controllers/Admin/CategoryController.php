@@ -38,8 +38,8 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        if (auth()->user()->can('list-category')){
-
+        if (auth()->user()->can('add-category')){
+            return view('backend.categories.create');
         }else{
             return redirect()->route('admin.dashboard')->withInfo('Permission denied!');
         }

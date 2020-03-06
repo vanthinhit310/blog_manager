@@ -13,7 +13,7 @@
                             </div>
                             <div class="col-4 text-right">
                                 @permission('add-category')
-                                <a href="{{ route('admin.category.index') }}" class="btn btn-sm btn-primary">{{ __('categories.add_category') }}</a>
+                                <a href="{{ route('admin.category.create') }}" class="btn btn-sm btn-primary">{{ __('categories.add_category') }}</a>
                                 @endpermission
                             </div>
                         </div>
