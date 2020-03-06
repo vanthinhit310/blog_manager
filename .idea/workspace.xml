@@ -2,16 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f6c99a06-f22e-47f6-9fd0-60dddb5718b7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/en/categories.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/backend/categories/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/backend/categories/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/backend/categories/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backend/categories/partials/cards.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backend/categories/partials/header.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/argon/css/argon.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/argon/css/argon.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/categories/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/categories/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/navbars/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/navbars/sidebar.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,7 +165,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php&#10;E:/xampp/htdocs/blog_manager/.env" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/backend/role" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/backend/categories" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -177,16 +174,16 @@
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2019.3.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\xampp\htdocs\blog_manager\resources\views\backend" />
-      <recent name="E:\xampp\htdocs\blog_manager\app\Http\Controllers\Admin" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\xampp\htdocs\blog_manager\resources\views\backend\categories" />
       <recent name="E:\xampp\htdocs\blog_manager\resources\views\backend\role" />
       <recent name="E:\xampp\htdocs\blog_manager\resources\views\backend\role\partials" />
       <recent name="E:\xampp\htdocs\blog_manager\resources\views\backend" />
       <recent name="E:\xampp\htdocs\blog_manager\resources\views\backend\ability\partials" />
-      <recent name="E:\xampp\htdocs\basic" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\xampp\htdocs\blog_manager\resources\views\backend" />
+      <recent name="E:\xampp\htdocs\blog_manager\app\Http\Controllers\Admin" />
     </key>
   </component>
   <component name="RunManager">
@@ -234,7 +231,7 @@
       <workItem from="1583199715426" duration="88000" />
       <workItem from="1583245774825" duration="11326000" />
       <workItem from="1583286660891" duration="24000" />
-      <workItem from="1583507713377" duration="5165000" />
+      <workItem from="1583507713377" duration="6001000" />
     </task>
     <servers />
   </component>

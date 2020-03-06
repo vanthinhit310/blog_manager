@@ -2,15 +2,19 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\ConstManager\ConstManager;
 use App\Http\Controllers\Controller;
+use App\Model\Category;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
 
-    public function __construct()
+    protected $model;
+    public function __construct(Category $model)
     {
         $this->middleware('auth');
+        $this->model = $model;
     }
     /**
      * Display a listing of the resource.
@@ -20,7 +24,8 @@ class CategoryController extends Controller
     public function index()
     {
         if (auth()->user()->can('list-category')){
-
+            $data = $this->model->paginate(ConstManager::PAGINATE);
+            return view('backend.categories.index',compact('data'));
         }else{
             return redirect()->route('admin.dashboard')->withInfo('Permission denied!');
         }

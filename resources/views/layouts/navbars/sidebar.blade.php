@@ -41,7 +41,7 @@
                                 </li>
                                 @permission('list-category')
                                 <li class="nav-item">
-                                    <a href="{{ route('admin.ability.index') }}" class="nav-link">Categories</a>
+                                    <a href="{{ route('admin.category.index') }}" class="nav-link">Categories</a>
                                 </li>
                                 @endpermission
                                 @permission('list-tag')

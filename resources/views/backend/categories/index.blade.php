@@ -1,7 +1,7 @@
 @extends('layouts.app', ['title' => __('categories.category_management')])
 
 @section('content')
-
+    @include('backend.categories.partials.cards')
     <div class="container-fluid mt--7">
         <div class="row">
             <div class="col">
@@ -57,7 +57,9 @@
                                     </td>
                                 </tr>
                             @empty
-                                <span>No data to display</span>
+                                <tr>
+                                    <td colspan="4" class="text-center"><span class="text-primary">No data to display</span></td>
+                                </tr>
                             @endforelse
                             </tbody>
                         </table>
