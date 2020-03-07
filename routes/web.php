@@ -63,5 +63,10 @@ Route::group([
 
     //category route
     Route::resource('category', 'Admin\CategoryController');
+
+    //File manager routes
+    Route::group(['prefix' => 'filemanager', 'middleware' => ['web', 'auth']], function () {
+        \UniSharp\LaravelFilemanager\Lfm::routes();
+    });
 });
 

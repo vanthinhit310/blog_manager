@@ -2,23 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f6c99a06-f22e-47f6-9fd0-60dddb5718b7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/TagController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Requests/Backend/TagRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/medialibrary.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_03_07_144205_create_media_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/en/tags.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/backend/tags/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/backend/tags/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/backend/tags/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/backend/tags/partials/cards.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/backend/tags/partials/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/lfm.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layouts/fm_master.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/vendor/laravel-filemanager/crop.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/vendor/laravel-filemanager/demo.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/vendor/laravel-filemanager/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/vendor/laravel-filemanager/move.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/vendor/laravel-filemanager/resize.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/vendor/laravel-filemanager/tree.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/vendor/laravel-filemanager/use.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Category.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/filesystems.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,7 +184,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="add_unversioned_files" value="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php&#10;E:/xampp/htdocs/blog_manager/.env" />
+    <property name="add_unversioned_files" value="$PROJECT_DIR$/vendor/unisharp/laravel-filemanager/src/Lfm.php&#10;E:/xampp/htdocs/blog_manager/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php&#10;E:/xampp/htdocs/blog_manager/.env&#10;E:/xampp/htdocs/blog_manager/vendor/unisharp/laravel-filemanager/src/Controllers/LfmController.php" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/lang/en" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -255,7 +252,7 @@
       <workItem from="1583245774825" duration="11326000" />
       <workItem from="1583286660891" duration="24000" />
       <workItem from="1583507713377" duration="11827000" />
-      <workItem from="1583590656966" duration="3471000" />
+      <workItem from="1583590656966" duration="8149000" />
     </task>
     <servers />
   </component>
@@ -274,10 +271,11 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="0" y="63" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.738/1366.-304.1920.1050@0.0.1366.738" timestamp="1583174361081" />
-    <state x="413" y="125" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1583516176548">
+    <state x="413" y="125" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1583597081452">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="413" y="125" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.738/1366.-304.1920.1050@0.0.1366.738" timestamp="1583516176548" />
+    <state x="413" y="125" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.738@0.0.1366.738" timestamp="1583597081452" />
     <state x="459" y="281" key="ComposerInitDialogKey" timestamp="1578851714200">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -307,12 +305,12 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="480" y="184" key="NewPhpClassDialog/0.0.1366.738/1366.-304.1920.1050@0.0.1366.738" timestamp="1582992340050" />
-    <state x="517" y="292" key="NewPhpFileDialog" timestamp="1583518686907">
+    <state x="517" y="292" key="NewPhpFileDialog" timestamp="1583597470865">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="517" y="292" key="NewPhpFileDialog/0.0.1366.738/-1920.-304.1920.1050@0.0.1366.738" timestamp="1578850955878" />
     <state x="517" y="292" key="NewPhpFileDialog/0.0.1366.738/1366.-304.1920.1050@0.0.1366.738" timestamp="1583518686907" />
-    <state x="517" y="292" key="NewPhpFileDialog/0.0.1366.738@0.0.1366.738" timestamp="1581909507846" />
+    <state x="517" y="292" key="NewPhpFileDialog/0.0.1366.738@0.0.1366.738" timestamp="1583597470865" />
     <state x="476" y="81" key="RollbackChangesDialog" timestamp="1582895843781">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
