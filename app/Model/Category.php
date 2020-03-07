@@ -5,10 +5,14 @@ namespace App\Model;
 use Illuminate\Database\Eloquent\Model;
 use OwenIt\Auditing\Contracts\Auditable;
 use Cviebrock\EloquentSluggable\Sluggable;
-class Category extends Model implements Auditable
+use Spatie\MediaLibrary\HasMedia\HasMedia;
+use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
+
+class Category extends Model implements Auditable, HasMedia
 {
     use \OwenIt\Auditing\Auditable;
     use Sluggable;
+    use HasMediaTrait;
 
     protected $table = 'categories';
 
