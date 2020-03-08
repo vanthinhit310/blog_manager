@@ -44,6 +44,18 @@
                                     @endif
                                 </div>
                                 <div class="form-group">
+                                    <label class="form-control-label">Image</label>
+                                    <div class="input-group mb-3">
+                                        <input id="thumbnail" class="form-control form-control-alternative" type="text" name="filepath" aria-label="Recipient's username" aria-describedby="button-addon2">
+                                        <div class="input-group-append">
+                                            <button id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-primary">
+                                                <i class="fa fa-picture-o"></i> Choose
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div id="holder" style="margin-top:15px;max-height:100px;"></div>
+                                </div>
+                                <div class="form-group">
                                     <label class="form-control-label">{{__('categories.content')}}</label>
                                     <textarea name="content" class="form-control form-control-alternative{{ $errors->has('content') ? ' is-invalid' : '' }}" rows="3"></textarea>
                                 </div>
@@ -60,3 +72,9 @@
         @include('layouts.footers.auth')
     </div>
 @endsection
+
+@push('js')
+    <script>
+        $('#lfm').filemanager();
+    </script>
+@endpush

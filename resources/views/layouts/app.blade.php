@@ -50,6 +50,7 @@
 <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.extension.js"></script>
 <script src="{{ asset('argon') }}/vendor/sweetalert2/dist/sweetalert2.min.js"></script>
 <script src="{{ asset('argon') }}/vendor/bootstrap-notify/bootstrap-notify.min.js"></script>
+<script src="{{ asset('vendor/laravel-filemanager/js/stand-alone-button.js') }}"></script>
 
 @stack('js')
 

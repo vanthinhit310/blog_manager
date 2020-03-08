@@ -183,12 +183,9 @@ a {
 }
 
 .nav-pills > li.active > a, .nav-pills > li:hover > a {
-    background-color: #485fe0;
+    background-color: #ddd;
     border-radius: 0;
-    color: #fff;
-}
-.nav-pills .nav-link:hover {
-    color: white;
+    color: #333844;
 }
 
 /* Items */
@@ -280,7 +277,6 @@ a {
     padding: 10px;
     text-align: center;
     max-width: calc(135px);
-    font-size: 13px;
 }
 
 .list .item_name {
