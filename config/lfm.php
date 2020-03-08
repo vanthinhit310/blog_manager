@@ -26,7 +26,7 @@ return [
     |
      */
 
-    'allow_private_folder'     => false,
+    'allow_private_folder'     => true,
 
     // Flexible way to customize client folders accessibility
     // If you want to customize client folders, publish tag="lfm_handler"
@@ -49,7 +49,7 @@ return [
     'folder_categories'        => [
         'file'  => [
             'folder_name'  => 'files',
-            'startup_view' => 'grid',
+            'startup_view' => 'thumbnails',
             'max_size'     => 50000, // size in KB
             'valid_mime'   => [
                 'image/jpeg',
@@ -83,15 +83,15 @@ return [
 
     'disk'                     => 'public',
 
-    'rename_file'              => false,
+    'rename_file'              => true,
 
-    'alphanumeric_filename'    => false,
+    'alphanumeric_filename'    => true,
 
     'alphanumeric_directory'   => false,
 
-    'should_validate_size'     => false,
+    'should_validate_size'     => true,
 
-    'should_validate_mime'     => false,
+    'should_validate_mime'     => true,
 
     // behavior on files with identical name
     // setting it to true cause old file replace with new one
@@ -107,7 +107,7 @@ return [
     // If true, image thumbnails would be created during upload
     'should_create_thumbnails' => true,
 
-    'thumb_folder_name'        => 'thumbs',
+    'thumb_folder_name'        => 'thumbnails',
 
     // Create thumbnails automatically only for listed types.
     'raster_mimetypes'         => [
@@ -116,9 +116,9 @@ return [
         'image/png',
     ],
 
-    'thumb_img_width'          => 200, // px
+    'thumb_img_width'          => 400, // px
 
-    'thumb_img_height'         => 200, // px
+    'thumb_img_height'         => 400, // px
 
     /*
     |--------------------------------------------------------------------------

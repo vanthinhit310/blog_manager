@@ -8,6 +8,12 @@
             font-size: 16px !important;
             line-height: 40px !important;
         }
+        li.nav-item{
+            padding-right: 0 !important;
+        }
+        .navbar-horizontal .navbar-nav .dropdown-menu::before {
+            display: none;
+        }
     </style>
 @endpush
 @section('content')
@@ -132,7 +138,7 @@
     </div>
 
     <div class="modal fade" id="dialog" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
+        <div class="modal-dialog modal-md">
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title"></h4>
