@@ -2,128 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f6c99a06-f22e-47f6-9fd0-60dddb5718b7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/MediaController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/mediaManager.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2018_10_06_100234_create_media_manager_lock_list_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/dist/lottie/avalanche.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/dist/lottie/ice_cream.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/dist/lottie/world.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/dist/lottie/zero.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/dist/noPreview.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/dist/patterns/gif/5b98026bab87a.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/dist/patterns/still/nyc-candy.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/components/globalSearch/button.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/components/globalSearch/image.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/components/globalSearch/panel.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/components/image/editor/controls.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/components/image/editor/filters/controls.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/components/image/editor/filters/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/components/image/editor/filters/presets.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/components/image/editor/main.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/components/image/lazyLoading.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/components/image/preview.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/components/manager.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/components/toolbar/dir-bookmark.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/components/toolbar/filter-sort.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/components/usageIntro/button.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/components/usageIntro/overlay.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/components/usageIntro/panel.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/components/utils/dropdown.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/components/utils/external-modal.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/components/utils/icon-types.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/components/utils/ratio.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/components/utils/upload-preview.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/manager.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/mixins/lazy.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/mixins/modal.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/mixins/panels.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/modules/broadcast.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/modules/bulk.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/modules/cache.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/modules/computed.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/modules/download.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/modules/events.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/modules/filtration.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/modules/folder.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/modules/form.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/modules/gestures.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/modules/icons.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/modules/image.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/modules/lock.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/modules/media_player.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/modules/movable.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/modules/restriction.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/modules/scroll.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/modules/selection.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/modules/upload.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/modules/url.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/modules/utils.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/modules/visibility.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/modules/watch.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/packages/PreventGhostClick.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/packages/animated-scroll-to.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/packages/download.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/webworkers/audio.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/webworkers/db.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/sass/manager.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/sass/modules/global-search.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/sass/modules/image-editor.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/sass/modules/media_player.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/sass/modules/ratio-bar.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/sass/modules/scroll-btn.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/sass/modules/usage-intro.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/sass/packages/animate.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/sass/packages/bulma.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/sass/packages/focal-point.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/sass/packages/goo.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/sass/packages/progress.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/sass/packages/switcher.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/sass/partials/defaults.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/sass/partials/loaders.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/sass/partials/panels.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/sass/partials/utils.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/sass/partials/vars.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/sass/partials/vue.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/vendor/MediaManager/en/messages.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/backend/media/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/vendor/MediaManager/_manager.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/vendor/MediaManager/extras/editor.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/vendor/MediaManager/extras/modal.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/vendor/MediaManager/media.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/vendor/MediaManager/partials/card.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/vendor/MediaManager/partials/mobile-nav.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/vendor/MediaManager/partials/modal/del-files-info.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/vendor/MediaManager/partials/modal/mov-files-info.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/vendor/MediaManager/partials/modal/ops.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/AbilitySeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/AbilitySeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/argon/css/argon.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/argon/css/argon.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/vendor/MediaManager/bulma.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/MediaManager/bulma.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/vendor/MediaManager/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/MediaManager/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/files/5e651d2adc248.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/files/5e651d2adc397.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/files/5e651d2adc4ad.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/files/Category/5e65291422d1b.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/files/Category/thumbnails/5e65291422d1b.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/files/thumbnails/5e651d2adc248.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/files/thumbnails/5e651d2adc397.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/files/thumbnails/5e651d2adc4ad.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/_variables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/categories/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/categories/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/sass/manager.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/sass/manager.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/sass/partials/defaults.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/sass/partials/defaults.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/sass/partials/panels.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/sass/partials/panels.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/navbars/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/navbars/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vendor/MediaManager/_manager.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/MediaManager/_manager.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -295,7 +186,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="add_unversioned_files" value="$PROJECT_DIR$/vendor/unisharp/laravel-filemanager/src/Lfm.php&#10;E:/xampp/htdocs/blog_manager/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php&#10;E:/xampp/htdocs/blog_manager/.env&#10;E:/xampp/htdocs/blog_manager/vendor/unisharp/laravel-filemanager/src/Controllers/LfmController.php" />
+    <property name="add_unversioned_files" value="$PROJECT_DIR$/vendor/unisharp/laravel-filemanager/src/Lfm.php&#10;E:/xampp/htdocs/blog_manager/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php&#10;E:/xampp/htdocs/blog_manager/.env&#10;E:/xampp/htdocs/blog_manager/vendor/ctf0/media-manager/src/MediaRoutes.php&#10;E:/xampp/htdocs/blog_manager/vendor/unisharp/laravel-filemanager/src/Controllers/LfmController.php" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/lang/en" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -305,16 +196,16 @@
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2019.3.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\xampp\htdocs\blog_manager\resources\views\backend" />
-      <recent name="E:\xampp\htdocs\blog_manager\app\Http\Controllers\Admin" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\xampp\htdocs\blog_manager\resources\lang\en" />
       <recent name="E:\xampp\htdocs\blog_manager\resources\views\backend" />
       <recent name="E:\xampp\htdocs\blog_manager\resources\views\backend\categories" />
       <recent name="E:\xampp\htdocs\blog_manager\resources\views\backend\role" />
       <recent name="E:\xampp\htdocs\blog_manager\resources\views\backend\role\partials" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\xampp\htdocs\blog_manager\resources\views\backend" />
+      <recent name="E:\xampp\htdocs\blog_manager\app\Http\Controllers\Admin" />
     </key>
   </component>
   <component name="RunManager">
@@ -367,7 +258,7 @@
       <workItem from="1583637164082" duration="513000" />
       <workItem from="1583684395672" duration="6073000" />
       <workItem from="1583718746838" duration="6000" />
-      <workItem from="1583850443239" duration="8471000" />
+      <workItem from="1583850443239" duration="12202000" />
     </task>
     <servers />
   </component>

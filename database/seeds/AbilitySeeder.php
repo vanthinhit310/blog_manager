@@ -177,6 +177,24 @@ class AbilitySeeder extends Seeder
                 'description' => 'Access Going To Backend Management Dashboard',
                 'group' => 'System'
             ],
+            [
+                'name' => Str::slug('List Media', '-'),
+                'display_name' => 'Media Management',
+                'description' => 'Manager all media of app',
+                'group' => 'Media'
+            ],
+            [
+                'name' => Str::slug('New Media', '-'),
+                'display_name' => 'New Media',
+                'description' => 'Upload New Media',
+                'group' => 'Media'
+            ],
+            [
+                'name' => Str::slug('Delete Media', '-'),
+                'display_name' => 'Delete Media',
+                'description' => 'Delete A Media',
+                'group' => 'Media'
+            ]
         ]);
 
         $permissions = \App\Permission::all();

@@ -75,6 +75,14 @@
                         </div>
                     </li>
                     @endpermission
+                    @permission('list-media')
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('media.index') }}">
+                            <i class="fa fa-image text-info"></i>
+                            <span class="nav-link-text">Media</span>
+                        </a>
+                    </li>
+                    @endpermission
                     @permission('list-user')
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('admin.user.index') }}">

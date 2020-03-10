@@ -1038,7 +1038,7 @@
 </media-manager>
 
 {{-- styles --}}
-@push('styles')
+@push('css')
     <link rel="stylesheet" href="{{ asset('assets/vendor/MediaManager/style.css') }}"/>
 @endpush
 

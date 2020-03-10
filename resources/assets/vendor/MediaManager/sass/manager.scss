@@ -365,9 +365,16 @@
                 box-shadow: none;
             }
         }
+
     }
 }
 
+.level-item{
+    span.icon{
+        width: 1.5rem !important;
+        height: 1.5rem !important;
+    }
+}
 // default
 .__stack-breadcrumb {
     background-color: $active_theme;
@@ -520,12 +527,12 @@
 .__box-lock-icon {
     border: none;
     border-radius: 100vw;
-    height: 0.5rem;
+    height: 0.5rem !important;
     padding: 0;
     position: absolute;
     right: 3px;
     top: 3px;
-    width: 0.5rem;
+    width: 0.5rem !important;
     z-index: 1;
 
     &:disabled {
