@@ -12,6 +12,7 @@
         "ext-curl": "*",
         "ext-json": "*",
         "arcanedev/log-viewer": "~5.0",
+        "ctf0/media-manager": "^3.6",
         "cviebrock/eloquent-sluggable": "~6.0",
         "fideloper/proxy": "^4.0",
         "laravel-frontend-presets/argon": "^1.0",
@@ -62,7 +63,8 @@
     "scripts": {
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-            "@php artisan package:discover --ansi"
+            "@php artisan package:discover --ansi",
+            "App\\Providers\\EventServiceProvider::postAutoloadDump"
         ],
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""

@@ -11,36 +11,46 @@
     <!-- Favicon -->
     <link href="{{ asset('argon') }}/img/brand/favicon.png" rel="icon" type="image/png">
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <!--<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700&display=swap" rel="stylesheet">
     <!-- Icons -->
     <link href="{{ asset('argon') }}/vendor/nucleo/css/nucleo.css" rel="stylesheet">
     <link href="{{ asset('argon') }}/vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
     <!-- Page plugins -->
     <link rel="stylesheet" href="{{asset('argon')}}/vendor/animate.css/animate.min.css">
     <link rel="stylesheet" href="{{asset('argon')}}/vendor/sweetalert2/dist/sweetalert2.min.css">
+
+    @stack('css')
+
     <!-- Argon CSS -->
     <link type="text/css" href="{{ asset('argon') }}/css/argon.css?v=1.1.0" rel="stylesheet">
+
+
 </head>
 <body class="{{ $class ?? '' }}">
-@auth()
-    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-        @csrf
-    </form>
-    @include('layouts.navbars.sidebar')
-@endauth
-
-<div class="main-content">
-    @auth
-        @include('layouts.navbars.navbar')
+<section id="app" v-cloak>
+    @auth()
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+        </form>
+        @include('layouts.navbars.sidebar')
     @endauth
-    @yield('content')
-</div>
 
-@guest()
-    @include('layouts.footers.guest')
-@endguest
+    <div class="main-content">
+        @auth
+            @include('layouts.navbars.navbar')
+        @endauth
+        @yield('content')
+    </div>
 
+    @guest()
+        @include('layouts.footers.guest')
+    @endguest
+</section>
+
+<!-- Vuejs -->
 <script src="{{ asset('argon') }}/vendor/jquery/dist/jquery.min.js"></script>
+<script src="{{ asset("js/app.js") }}"></script>
 <script src="{{ asset('argon') }}/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script src="{{ asset('argon') }}/vendor/js-cookie/js.cookie.js"></script>
 <script src="{{ asset('argon') }}/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
@@ -53,6 +63,8 @@
 <script src="{{ asset('vendor/laravel-filemanager/js/stand-alone-button.js') }}"></script>
 
 @stack('js')
+@stack('styles')
+@stack('scripts')
 
 <!-- Argon JS -->
 <script src="{{ asset('argon') }}/js/argon.js?v=1.1.0"></script>

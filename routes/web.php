@@ -46,7 +46,7 @@ Route::group([
     Route::get('/dashboard', 'Admin\DashboardController@index')->name('dashboard');
     //User routes
     Route::resource('user', 'Admin\UserController', ['except' => ['show']]);
-    Route::put('/password/{id}',['as' => 'password.change','uses' => 'Admin\UserController@changePassword']);
+    Route::put('/password/{id}', ['as' => 'password.change', 'uses' => 'Admin\UserController@changePassword']);
     //Profile routes
     Route::group([
         'prefix' => 'profile'
@@ -64,9 +64,15 @@ Route::group([
     //category route
     Route::resource('category', 'Admin\CategoryController');
 
-    //File manager routes
-    Route::group(['prefix' => 'filemanager', 'middleware' => ['web', 'auth']], function () {
-        \UniSharp\LaravelFilemanager\Lfm::routes();
-    });
 });
+
+//Package route
+Route::group([
+    'prefix' => 'admin',
+    'middleware' => 'auth'
+], function () {
+    // MediaManager
+    ctf0\MediaManager\MediaRoutes::routes();
+});
+
 

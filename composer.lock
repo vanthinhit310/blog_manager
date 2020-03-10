@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7d7b613bd8242b797d82f5df12402238",
+    "content-hash": "eea2477dca15cd2f85a05f6581dba44c",
     "packages": [
         {
             "name": "arcanedev/log-viewer",
@@ -199,6 +199,117 @@
                 "slugify"
             ],
             "time": "2019-12-14T13:04:14+00:00"
+        },
+        {
+            "name": "ctf0/media-manager",
+            "version": "v3.6.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ctf0/Laravel-Media-Manager.git",
+                "reference": "2aae5a444d970c496cfca8b66a499b603b290110"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ctf0/Laravel-Media-Manager/zipball/2aae5a444d970c496cfca8b66a499b603b290110",
+                "reference": "2aae5a444d970c496cfca8b66a499b603b290110",
+                "shasum": ""
+            },
+            "require": {
+                "ctf0/package-changelog": "*",
+                "illuminate/support": "^5.4 || ^6.0 || ^7.0",
+                "jhofm/flysystem-iterator": "^2.2",
+                "maennchen/zipstream-php": "~1.0",
+                "php": "~7.0"
+            },
+            "suggest": {
+                "league/flysystem-cached-adapter": "Required to use the Flysystem cache (~1.0)."
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "ctf0\\MediaManager\\MediaManagerServiceProvider"
+                    ]
+                },
+                "changeLog": "logs"
+            },
+            "autoload": {
+                "psr-4": {
+                    "ctf0\\MediaManager\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Muah",
+                    "email": "muah003@gmail.com"
+                }
+            ],
+            "description": "A Media Manager Built With Vuejs & Laravel",
+            "homepage": "https://github.com/ctf0/Laravel-Media-Manager",
+            "keywords": [
+                "ctf0",
+                "gui",
+                "laravel",
+                "manager",
+                "media",
+                "mediamanager"
+            ],
+            "time": "2020-03-09T09:28:44+00:00"
+        },
+        {
+            "name": "ctf0/package-changelog",
+            "version": "v1.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ctf0/PackageChangeLog.git",
+                "reference": "bc53f9faa3fef48da4504e2f4080e837d9edc689"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ctf0/PackageChangeLog/zipball/bc53f9faa3fef48da4504e2f4080e837d9edc689",
+                "reference": "bc53f9faa3fef48da4504e2f4080e837d9edc689",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": ">=5.0",
+                "php": "~7.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "ctf0\\PackageChangeLog\\PackageChangeLogServiceProvider"
+                    ]
+                },
+                "changeLog": "logs"
+            },
+            "autoload": {
+                "psr-4": {
+                    "ctf0\\PackageChangeLog\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Muah",
+                    "email": "muah003@gmail.com"
+                }
+            ],
+            "description": "show package changeLog on install/update",
+            "homepage": "https://github.com/ctf0/PackageChangeLog",
+            "keywords": [
+                "ctf0",
+                "laravel",
+                "package-changelog"
+            ],
+            "time": "2020-03-04T13:09:26+00:00"
         },
         {
             "name": "cviebrock/eloquent-sluggable",
@@ -819,6 +930,48 @@
             ],
             "description": "Highlight PHP code in terminal",
             "time": "2018-09-29T18:48:56+00:00"
+        },
+        {
+            "name": "jhofm/flysystem-iterator",
+            "version": "v2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jhofm/flysystem-iterator.git",
+                "reference": "93aa7613f1bda960c5d9e8e7ae0b98257be1153d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jhofm/flysystem-iterator/zipball/93aa7613f1bda960c5d9e8e7ae0b98257be1153d",
+                "reference": "93aa7613f1bda960c5d9e8e7ae0b98257be1153d",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "league/flysystem": "^1.0",
+                "php": "^7.0"
+            },
+            "require-dev": {
+                "league/flysystem-memory": "^1.0",
+                "phpunit/phpunit": "^6.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Jhofm\\FlysystemIterator\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Johannes Hofmann",
+                    "email": "hofmann.johannes@gmail.com"
+                }
+            ],
+            "description": "Iterator plugin for league/flysystem",
+            "time": "2019-12-09T19:25:07+00:00"
         },
         {
             "name": "kkszymanowski/traitor",
