@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Role;
 use App\User;
 use Faker\Factory;
 use Illuminate\Console\Command;
@@ -41,11 +42,7 @@ class Testcommand extends Command
     {
 //        Schema::disableForeignKeyConstraints();
 //        Schema::enableForeignKeyConstraints();
-        foreach (User::where('id','>',7855)->get()->chunk(100) as $users){
-            foreach ($users as $user){
-                $user->attachRole('user');
-                dump($user->id);
-            }
-        }
+        $user = Role::find(1);
+        dump($user->permissions()->get());
     }
 }

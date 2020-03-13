@@ -1,0 +1,25 @@
+#modal-media{
+    padding-right: 0 !important;
+    .is-fluid{
+        padding: 0;
+    }
+
+    .modal-xl{
+        max-width: 88%;
+    }
+    .modal-body{
+        padding: 0 15px 15px;
+    }
+    .media-manager.top-space {
+        padding-top: 0;
+    }
+    .modal-header{
+        padding: 10px;
+    }
+    .modal-content, .modal-card{
+        overflow-x: hidden;
+    }
+    .modal-footer{
+        padding: 0 15px 15px;
+    }
+}

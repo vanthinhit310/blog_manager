@@ -43,10 +43,41 @@
                                         </span>
                                     @endif
                                 </div>
+
                                 <div class="form-group">
                                     <label class="form-control-label">{{__('categories.content')}}</label>
                                     <textarea name="content" class="form-control form-control-alternative{{ $errors->has('content') ? ' is-invalid' : '' }}" rows="3"></textarea>
                                 </div>
+
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-primary" type="button" data-toggle="modal" data-target="#modal-media" id="button-addon2">{{ __('categories.logo') }}</button>
+                                    </div>
+                                </div>
+
+                                <!-- Upload media manager -->
+                                <media-component inline-template>
+                                    <div>
+                                        <div v-if="inputName">@include('MediaManager::extras.modal')</div>
+                                        <media-modal item="cover" :name="inputName"></media-modal>
+                                        <form action="#" method="get">
+                                            <section>
+                                                <input type="hidden" name="cover" :value="cover"/>
+                                                <div v-if="cover != ''" class="avatar form-group">
+                                                    <img alt="Image placeholder" class="img-fluid w-100" :src="cover">
+                                                </div>
+                                                <div class="toggle-modal">
+                                                    <button @click="toggleModalFor('cover')" class="btn btn-icon btn-primary" type="button">
+                                                        <span class="btn-inner--icon"><i class="ni ni-bag-17"></i></span>
+                                                        <span class="btn-inner--text">Choose logo for this category</span>
+                                                    </button>
+                                                </div>
+                                            </section>
+                                        </form>
+                                    </div>
+                                </media-component inline-template>
+                                <!-- Upload media manager -->
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-success mt-4">{{ __('Save') }}</button>
                                 </div>
@@ -56,11 +87,14 @@
                 </div>
             </div>
         </div>
-
         @include('layouts.footers.auth')
     </div>
 @endsection
-
-@push('js')
-
+@push('css')
+    <link rel="stylesheet" href="{{ asset('assets/vendor/MediaManager/bulma.css') }}">
+    <style>
+        .card-header {
+            display: unset;
+        }
+    </style>
 @endpush

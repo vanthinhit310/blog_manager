@@ -5,11 +5,11 @@ export default {
     computed: {
         uploadPanelImg() {
             if (this.uploadArea) {
-                let imgs = this.uploadPanelImgList
-                let grds = this.uploadPanelGradients
+                let imgs = this.uploadPanelImgList;
+                let grds = this.uploadPanelGradients;
 
                 let url = imgs.length ? imgs[Math.floor(Math.random() * imgs.length)] : null
-                let color = grds[Math.floor(Math.random() * grds.length)]
+                let color = grds[Math.floor(Math.random() * grds.length)];
 
                 return url
                     ? {'--gradient': color, 'background-image': `url("${url}")`}
@@ -145,7 +145,7 @@ export default {
             let options = {
                 url: manager.routes.upload,
                 parallelUploads: 10,
-                hiddenInputContainer: '#new-upload',
+                hiddenInputContainer: '.dropzone-media-manager',
                 uploadMultiple: true,
                 forceFallback: false,
                 acceptedFiles: uploadTypes,
@@ -221,7 +221,7 @@ export default {
             options = Object.assign(options, autoProcess)
 
             // upload panel
-            new Dropzone('#new-upload', options)
+            new Dropzone('.dropzone-media-manager', options)
             // drag & drop on empty area
             new Dropzone('.__stack-container', Object.assign(options, {clickable: false}))
         },

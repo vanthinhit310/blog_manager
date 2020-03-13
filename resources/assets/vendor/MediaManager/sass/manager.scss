@@ -94,6 +94,7 @@
         padding: 3em;
         position: relative;
         text-align: center;
+        background-color: #5e72e4 !important
     }
 
     .form-switcher,
@@ -966,6 +967,7 @@
 .modal-manager__Inmodal {
     > .modal-content {
         width: 85%;
+        height: auto;
     }
 
     .__stack-breadcrumb-mobile {

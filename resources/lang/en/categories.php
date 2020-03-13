@@ -10,4 +10,5 @@ return [
     'content' => 'Content',
     'message_delete' => 'Are you sure you want to delete this category?',
     'edit_categories' => 'Edit Categories',
+    'logo' => 'Logo'
 ];

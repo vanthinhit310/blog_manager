@@ -14,7 +14,6 @@ use ctf0\MediaManager\App\Controllers\Modules\Rename;
 use ctf0\MediaManager\App\Controllers\Modules\Upload;
 use ctf0\MediaManager\App\Controllers\Modules\Utils;
 use ctf0\MediaManager\App\Controllers\Modules\Visibility;
-use Illuminate\Http\Request;
 use Jhofm\FlysystemIterator\Plugin\IteratorPlugin;
 
 class MediaController extends Controller

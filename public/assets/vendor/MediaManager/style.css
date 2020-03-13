@@ -3176,6 +3176,7 @@ a.plyr__control::before {
   padding: 3em;
   position: relative;
   text-align: center;
+  background-color: #5e72e4 !important;
 }
 
 #new-upload .form-switcher,
@@ -4044,6 +4045,7 @@ a.plyr__control::before {
 
 .modal-manager__Inmodal > .modal-content {
   width: 85%;
+  height: auto;
 }
 
 .modal-manager__Inmodal .__stack-breadcrumb-mobile {
