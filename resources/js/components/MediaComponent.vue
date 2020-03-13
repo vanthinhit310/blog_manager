@@ -13,6 +13,12 @@
                 gallery: '',
                 links: ''
             }
+        },
+        methods:{
+            removeCoverImage:function () {
+                let self = this;
+                self.cover = '';
+            }
         }
 
     }

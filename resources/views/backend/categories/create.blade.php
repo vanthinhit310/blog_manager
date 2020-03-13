@@ -49,34 +49,26 @@
                                     <textarea name="content" class="form-control form-control-alternative{{ $errors->has('content') ? ' is-invalid' : '' }}" rows="3"></textarea>
                                 </div>
 
-                                <div class="input-group mb-3">
-                                    <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
-                                    <div class="input-group-append">
-                                        <button class="btn btn-outline-primary" type="button" data-toggle="modal" data-target="#modal-media" id="button-addon2">{{ __('categories.logo') }}</button>
-                                    </div>
-                                </div>
 
                                 <!-- Upload media manager -->
                                 <media-component inline-template>
-                                    <div>
+                                    <div style="height:160px">
                                         <div v-if="inputName">@include('MediaManager::extras.modal')</div>
                                         <media-modal item="cover" :name="inputName"></media-modal>
-                                        <form action="#" method="get">
-                                            <section>
-                                                <input type="hidden" name="cover" :value="cover"/>
-                                                <div v-if="cover != ''" class="avatar form-group">
-                                                    <img alt="Image placeholder" class="img-fluid w-100" :src="cover">
-                                                </div>
-                                                <div class="toggle-modal">
-                                                    <button @click="toggleModalFor('cover')" class="btn btn-icon btn-primary" type="button">
-                                                        <span class="btn-inner--icon"><i class="ni ni-bag-17"></i></span>
-                                                        <span class="btn-inner--text">Choose logo for this category</span>
-                                                    </button>
-                                                </div>
-                                            </section>
-                                        </form>
+                                        <section>
+                                            <input type="hidden" name="cover" :value="cover"/>
+                                            <div v-if="cover != ''" class="avatar avatar-cover-custom form-group">
+                                                <img alt="Image placeholder" class="img-fluid w-100" :src="cover">
+                                                <a role="button" @click="removeCoverImage()" class="remove-media-image"><i class="fa fa-times" aria-hidden="true"></i></a>
+                                            </div>
+                                            <div v-if="cover == ''" class="toggle-modal">
+                                                <button class="media-manager-button" @click="toggleModalFor('cover')" type="button">
+                                                    <span class="btn-inner--text">Browser media</span>
+                                                </button>
+                                            </div>
+                                        </section>
                                     </div>
-                                </media-component inline-template>
+                                </media-component>
                                 <!-- Upload media manager -->
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-success mt-4">{{ __('Save') }}</button>

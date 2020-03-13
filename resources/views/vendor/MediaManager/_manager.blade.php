@@ -387,7 +387,7 @@
         {{-- dropzone --}}
         <section>
             <div class="media-manager__dz" :class="{'__dz-active': uploadArea}">
-                <form id="new-upload" :style="uploadPanelImg">
+                <div class="dropzone-media-manager" :style="uploadPanelImg">
                     <input type="hidden" name="upload_path" :value="files.path">
                     <input type="hidden" name="random_names" :value="useRandomNamesForUpload">
 
@@ -413,7 +413,7 @@
                             </icon>
                         </span>
                     </div>
-                </form>
+                </div>
             </div>
 
             <transition name="mm-list">

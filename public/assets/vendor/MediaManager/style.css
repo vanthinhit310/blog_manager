@@ -3136,7 +3136,7 @@ a.plyr__control::before {
   visibility: unset;
 }
 
-#new-upload {
+.dropzone-media-manager {
   background-color: #1d2428;
   background-position: center;
   background-repeat: repeat;
@@ -3147,7 +3147,7 @@ a.plyr__control::before {
   transition: all 0.25s cubic-bezier(0.18, 0.89, 0.32, 1.28);
 }
 
-#new-upload::before {
+.dropzone-media-manager::before {
   background-image: var(--gradient);
   border-radius: 100vw;
   content: "";
@@ -3161,72 +3161,72 @@ a.plyr__control::before {
   width: 25vw;
 }
 
-#new-upload:hover {
+.dropzone-media-manager:hover {
   box-shadow: 0 6px 25px rgba(29, 36, 40, 0.3);
 }
 
-#new-upload:hover::before {
+.dropzone-media-manager:hover::before {
   box-shadow: 0 6px 25px rgba(29, 36, 40, 0.3);
 }
 
-#new-upload .dz-message {
+.dropzone-media-manager .dz-message {
   color: white;
   font-weight: 400;
   margin: 0;
   padding: 3em;
   position: relative;
   text-align: center;
-  background-color: #5e72e4 !important;
+  background-color: transparent;
 }
 
-#new-upload .form-switcher,
-#new-upload .save_link {
+.dropzone-media-manager .form-switcher,
+.dropzone-media-manager .save_link {
   position: absolute;
   z-index: 1;
 }
 
-#new-upload .form-switcher {
+.dropzone-media-manager .form-switcher {
   bottom: 0.5rem;
   left: 0.5rem;
 }
 
-#new-upload .save_link {
+.dropzone-media-manager .save_link {
   bottom: 0;
   -webkit-filter: drop-shadow(0 0 0.1rem rgba(29, 36, 40, 0.3));
           filter: drop-shadow(0 0 0.1rem rgba(29, 36, 40, 0.3));
   right: 0.5rem;
 }
 
-#new-upload .save_link .circle,
-#new-upload .save_link .anchor {
+.dropzone-media-manager .save_link .circle,
+.dropzone-media-manager .save_link .anchor {
   transition: all 0.25s cubic-bezier(0.18, 0.89, 0.32, 1.28);
 }
 
-#new-upload .save_link .circle {
+.dropzone-media-manager .save_link .circle {
   color: #eceff1;
 }
 
-#new-upload .save_link .anchor {
+.dropzone-media-manager .save_link .anchor {
   color: #5e7280;
 }
 
-#new-upload .save_link:hover .anchor {
+.dropzone-media-manager .save_link:hover .anchor {
   color: #eceff1;
 }
 
-#new-upload .save_link:hover .circle {
+.dropzone-media-manager .save_link:hover .circle {
   color: #5e7280;
 }
 
 @media screen and (max-width: 1023px) {
-  #new-upload::before {
+  .dropzone-media-manager::before {
     height: 40vw;
     width: 40vw;
   }
 }
 
 @media screen and (max-width: 768px) {
-  #new-upload::before {
+  .dropzone-media-manager::before {
     height: 50vw;
     width: 50vw;
   }
@@ -4151,5 +4151,50 @@ a.plyr__control::before {
   position: absolute;
   right: 1rem;
   z-index: 2;
+}
+
+.media-manager-button {
+  --webkit-appearence: none;
+  border: none;
+  outline: none;
+  width: 150px;
+  height: 150px;
+  border-radius: 25px;
+  background: transparent url("/images/icon/ic_cloud_upload_48px@4x.png") no-repeat center center/contain;
+}
+
+.media-manager-button span {
+  color: #525f7f;
+  font-size: 11px;
+}
+
+.media-manager-button:focus {
+  outline: none !important;
+  border: none !important;
+}
+
+.media-manager-button:active {
+  outline: none !important;
+  border: none !important;
+}
+
+.avatar-cover-custom {
+  width: 150px !important;
+  height: 150px !important;
+  position: absolute;
+}
+
+.avatar-cover-custom img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.avatar-cover-custom a.remove-media-image {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+  z-index: 1;
 }
 

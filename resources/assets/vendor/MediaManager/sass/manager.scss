@@ -55,7 +55,7 @@
     visibility: unset;
 }
 
-#new-upload {
+.dropzone-media-manager {
     background-color: $black;
     background-position: center;
     background-repeat: repeat;
@@ -94,7 +94,7 @@
         padding: 3em;
         position: relative;
         text-align: center;
-        background-color: #5e72e4 !important
+        background-color: transparent;
     }
 
     .form-switcher,
@@ -139,14 +139,14 @@
 }
 
 @include media('max', 1023) {
-    #new-upload::before {
+    .dropzone-media-manager::before {
         height: 40vw;
         width: 40vw;
     }
 }
 
 @include media('max', 768) {
-    #new-upload::before {
+    .dropzone-media-manager::before {
         height: 50vw;
         width: 50vw;
     }
@@ -1084,4 +1084,44 @@
     position: absolute;
     right: $option_btns-space;
     z-index: 2;
+}
+
+.media-manager-button{
+    --webkit-appearence : none;
+    border: none;
+    outline: none;
+    width: 150px;
+    height: 150px;
+    border-radius: 25px;
+    background: transparent url("/images/icon/ic_cloud_upload_48px@4x.png") no-repeat center center/contain;
+    span{
+        color: #525f7f;
+        font-size: 11px;
+    }
+
+    &:focus{
+        outline: none !important;
+        border: none !important;
+    }
+    &:active{
+        outline: none !important;
+        border: none !important;
+    }
+}
+
+.avatar-cover-custom{
+    width: 150px !important;
+    height: 150px !important;
+    position: absolute;
+    img{
+        height: 100%;
+        object-fit: cover;
+    }
+    a.remove-media-image{
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        cursor: pointer;
+        z-index: 1;
+    }
 }
