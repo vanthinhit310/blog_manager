@@ -4,6 +4,7 @@
          @click.stop="togglePanel()">
         <div class="dropdown-trigger">
             <button class="button"
+                    type="button"
                     :disabled="disabled"
                     aria-haspopup="true"
                     aria-controls="dropdown-menu">

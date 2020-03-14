@@ -1921,6 +1921,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['route', 'isLoading', 'trans', 'showNotif'],
   data: function data() {
@@ -2287,6 +2288,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['dragModeIs', 'trans', 'operations', 'processing'],
   data: function data() {
@@ -2349,6 +2351,8 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var lodash_debounce__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash/debounce */ "./node_modules/lodash/debounce.js");
 /* harmony import */ var lodash_debounce__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash_debounce__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
 //
 //
 //
@@ -2658,6 +2662,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2704,6 +2709,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var cropperjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! cropperjs */ "./node_modules/cropperjs/dist/cropper.js");
 /* harmony import */ var cropperjs__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(cropperjs__WEBPACK_IMPORTED_MODULE_3__);
+//
+//
+//
+//
+//
 //
 //
 //
@@ -3324,6 +3334,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var lodash_debounce__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash_debounce__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _packages_animated_scroll_to__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../packages/animated-scroll-to */ "./resources/assets/vendor/MediaManager/js/packages/animated-scroll-to.js");
 /* harmony import */ var _packages_animated_scroll_to__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_packages_animated_scroll_to__WEBPACK_IMPORTED_MODULE_1__);
+//
+//
 //
 //
 //
@@ -4392,6 +4404,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['disabled'],
   data: function data() {
@@ -4665,6 +4678,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash/cloneDeep */ "./node_modules/lodash/cloneDeep.js");
 /* harmony import */ var lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var vue_focuspoint_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-focuspoint-component */ "./node_modules/vue-focuspoint-component/src/index.js");
+//
+//
 //
 //
 //
@@ -76813,7 +76828,8 @@ var render = function() {
       staticClass: "button",
       attrs: {
         disabled: _vm.loading || _vm.isLoading,
-        title: _vm.trans("glbl_search")
+        title: _vm.trans("glbl_search"),
+        type: "button"
       },
       on: {
         click: function($event) {
@@ -77216,6 +77232,7 @@ var render = function() {
           _vm._v(" "),
           _c("button", {
             staticClass: "modal-close is-large",
+            attrs: { type: "button" },
             on: {
               click: function($event) {
                 $event.stopPropagation()
@@ -77266,7 +77283,11 @@ var render = function() {
           key: item.op,
           staticClass: "btn-plain",
           class: { "is-active": item.mode ? _vm.dragModeIs(item.mode) : false },
-          attrs: { title: _vm.trans(item.trans), disabled: _vm.processing },
+          attrs: {
+            title: _vm.trans(item.trans),
+            type: "button",
+            disabled: _vm.processing
+          },
           on: {
             click: function($event) {
               $event.stopPropagation()
@@ -77353,7 +77374,7 @@ var render = function() {
                 ],
                 staticClass: "btn-plain",
                 class: { "is-active": _vm.isUsed() },
-                attrs: { disabled: _vm.processing }
+                attrs: { type: "button", disabled: _vm.processing }
               },
               [
                 _c(
@@ -77464,7 +77485,7 @@ var render = function() {
             {
               staticClass: "btn-plain",
               class: { "is-active": _vm.isUsed() },
-              attrs: { disabled: _vm.processing },
+              attrs: { disabled: _vm.processing, type: "button" },
               on: {
                 click: function($event) {
                   $event.stopPropagation()
@@ -77584,7 +77605,11 @@ var render = function() {
                 key: item,
                 staticClass: "btn-plain",
                 class: { "is-active": _vm.isUsed(item) },
-                attrs: { disabled: _vm.processing, title: item },
+                attrs: {
+                  disabled: _vm.processing,
+                  title: item,
+                  type: "button"
+                },
                 on: {
                   click: function($event) {
                     $event.stopPropagation()
@@ -77699,6 +77724,7 @@ var render = function() {
               attrs: {
                 disabled:
                   (_vm.processing && !_vm.imageDiffIsReady) || _vm.diffDisable,
+                type: "button",
                 title: _vm.trans("diff")
               },
               on: {
@@ -77732,7 +77758,8 @@ var render = function() {
               staticClass: "btn-plain",
               attrs: {
                 disabled: _vm.processing || !_vm.haveFilters(),
-                title: _vm.trans("crop_reset_filters")
+                title: _vm.trans("crop_reset_filters"),
+                type: "button"
               },
               on: {
                 click: function($event) {
@@ -77867,7 +77894,8 @@ var render = function() {
                     staticClass: "btn-plain",
                     attrs: {
                       disabled: _vm.processing || !_vm.hasChanged,
-                      title: _vm.trans("crop_reset")
+                      title: _vm.trans("crop_reset"),
+                      type: "button"
                     },
                     on: {
                       click: function($event) {
@@ -77907,7 +77935,8 @@ var render = function() {
                     staticClass: "btn-plain",
                     attrs: {
                       disabled: _vm.processing || !_vm.croppedByUser,
-                      title: _vm.trans("clear")
+                      title: _vm.trans("clear"),
+                      type: "button"
                     },
                     on: {
                       click: function($event) {
@@ -77947,7 +77976,8 @@ var render = function() {
                     staticClass: "btn-plain",
                     attrs: {
                       disabled: _vm.processing || !_vm.hasChanged,
-                      title: _vm.trans("crop_apply")
+                      title: _vm.trans("crop_apply"),
+                      type: "button"
                     },
                     on: {
                       click: function($event) {
@@ -78159,7 +78189,10 @@ var render = function() {
                       "button",
                       {
                         staticClass: "button btn-plain",
-                        attrs: { disabled: _vm.ops_btn_disable },
+                        attrs: {
+                          disabled: _vm.ops_btn_disable,
+                          type: "button"
+                        },
                         on: {
                           click: function($event) {
                             $event.stopPropagation()
@@ -78187,7 +78220,10 @@ var render = function() {
                       "button",
                       {
                         staticClass: "button btn-plain",
-                        attrs: { disabled: _vm.ops_btn_disable },
+                        attrs: {
+                          disabled: _vm.ops_btn_disable,
+                          type: "button"
+                        },
                         on: {
                           click: function($event) {
                             $event.stopPropagation()
@@ -78681,6 +78717,7 @@ var render = function() {
           _vm._v(" "),
           _c("button", {
             staticClass: "modal-close is-large",
+            attrs: { type: "button" },
             on: {
               click: function($event) {
                 $event.stopPropagation()
@@ -78750,6 +78787,7 @@ var render = function() {
           {
             staticClass: "button",
             attrs: {
+              type: "button",
               disabled: _vm.disabled,
               "aria-haspopup": "true",
               "aria-controls": "dropdown-menu"
@@ -78965,7 +79003,7 @@ var render = function() {
                   ],
                   staticClass: "btn-plain",
                   class: { alt: _vm.panelIsVisible },
-                  attrs: { title: _vm.trans("options") },
+                  attrs: { type: "button", title: _vm.trans("options") },
                   on: {
                     click: function($event) {
                       $event.stopPropagation()
@@ -79178,6 +79216,7 @@ var render = function() {
                         "button",
                         {
                           staticClass: "button is-success",
+                          attrs: { type: "button" },
                           on: {
                             click: function($event) {
                               $event.stopPropagation()

@@ -4,6 +4,7 @@
         <section v-if="!isControlable">
             <button v-tippy="{html: '#contentpopup2', interactive: true, reactive: true, trigger: 'click', theme: 'mm', arrow: true}"
                     :class="{'is-active': isUsed()}"
+                    type="button"
                     :disabled="processing"
                     class="btn-plain">
                 <span class="icon"><icon :name="processing ? 'spinner' : icon"
@@ -43,6 +44,7 @@
                 :class="{'is-active': isUsed()}"
                 :disabled="processing"
                 class="btn-plain"
+                type="button"
                 @click.stop="update()">
             <span class="icon">
                 <icon :name="processing ? 'spinner' : icon"

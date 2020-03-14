@@ -14,6 +14,7 @@
                         :disabled="processing"
                         :class="{'is-active': isUsed(item)}"
                         :title="item"
+                        type="button"
                         class="btn-plain"
                         @click.stop="apply(item)">
                     <span v-show="processing"

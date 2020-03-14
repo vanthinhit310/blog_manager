@@ -7,10 +7,10 @@
 
         <div class="goo">
             <div class="circular-menu"
-                v-if="showOps"
-                :class="{'active' : opsMenu}">
+                 v-if="showOps"
+                 :class="{'active' : opsMenu}">
                 <div class="floating-btn"
-                    @click="toggleOpsMenu()">
+                     @click="toggleOpsMenu()">
                     <span class="icon is-large"><icon name="cog"></icon></span>
                 </div>
 
@@ -18,15 +18,15 @@
                     <!-- move -->
                     <div class="menu-item">
                         <button class="button btn-plain"
-                            :disabled="ops_btn_disable"
-                            @click.stop="addToMovableList()">
+                                :disabled="ops_btn_disable"
+                                @click.stop="addToMovableList()">
                             <span class="icon is-large">
                                 <icon v-if="inMovableList()"
-                                    name="shopping-cart"
-                                    scale="1.2"></icon>
+                                      name="shopping-cart"
+                                      scale="1.2"></icon>
                                 <icon v-else
-                                    name="cart-plus"
-                                    scale="1.2"></icon>
+                                      name="cart-plus"
+                                      scale="1.2"></icon>
                             </span>
                         </button>
                     </div>
@@ -34,11 +34,11 @@
                     <!-- rename -->
                     <div class="menu-item">
                         <button class="button btn-plain"
-                            :disabled="ops_btn_disable"
-                            @click.stop="renameItem()">
+                                :disabled="ops_btn_disable"
+                                @click.stop="renameItem()">
                             <span class="icon is-large">
                                 <icon name="terminal"
-                                    scale="1.2"></icon>
+                                      scale="1.2"></icon>
                             </span>
                         </button>
                     </div>
@@ -46,23 +46,25 @@
                     <!-- editor -->
                     <div class="menu-item">
                         <button class="button btn-plain"
-                            :disabled="ops_btn_disable"
-                            @click.stop="imageEditorCard()">
+                                :disabled="ops_btn_disable"
+                                type="button"
+                                @click.stop="imageEditorCard()">
                             <span class="icon is-large">
                                 <icon name="object-ungroup"
-                                    scale="1.2"></icon>
+                                      scale="1.2"></icon>
                             </span>
                         </button>
                     </div>
 
                     <!-- delete -->
                     <div class="menu-item">
-                         <button class="button btn-plain"
-                            :disabled="ops_btn_disable"
-                            @click.stop="deleteItem()">
+                        <button class="button btn-plain"
+                                :disabled="ops_btn_disable"
+                                type="button"
+                                @click.stop="deleteItem()">
                             <span class="icon is-large">
                                 <icon name="trash"
-                                    scale="1.2"></icon>
+                                      scale="1.2"></icon>
                             </span>
                         </button>
                     </div>
@@ -85,87 +87,87 @@
 </template>
 
 <script>
-import debounce from 'lodash/debounce'
-import animateScrollTo from '../../packages/animated-scroll-to'
+    import debounce from 'lodash/debounce'
+    import animateScrollTo from '../../packages/animated-scroll-to'
 
-export default {
-    props: [
-        'trans',
-        'showOps',
-        'ops_btn_disable',
-        'inMovableList',
-        'renameItem',
-        'deleteItem',
-        'imageEditorCard',
-        'addToMovableList'
-    ],
-    data() {
-        return {
-            scrollBtn: {
-                state: false,
-                dir: 'down'
-            },
-            opsMenu: false
-        }
-    },
-    created() {
-        window.addEventListener('resize', this.isScrollable)
-    },
-    mounted() {
-        this.isScrollable()
-    },
-    beforeDestroy() {
-        window.removeEventListener('resize', this.isScrollable)
-    },
-    methods: {
-        isScrollable() {
-            let item = this.getContainer(this.$el)
-
-            if (item) {
-                return this.scrollBtn.state = item.scrollHeight > item.offsetHeight
+    export default {
+        props: [
+            'trans',
+            'showOps',
+            'ops_btn_disable',
+            'inMovableList',
+            'renameItem',
+            'deleteItem',
+            'imageEditorCard',
+            'addToMovableList'
+        ],
+        data() {
+            return {
+                scrollBtn: {
+                    state: false,
+                    dir: 'down'
+                },
+                opsMenu: false
             }
         },
-        updateScrollDir: debounce(function (e) {
-            let item = e.target
-            let margin = 3
-
-            return this.scrollBtn.dir = (item.scrollTop + item.clientHeight) >= (item.scrollHeight - margin)
-                ? 'up'
-                : 'down'
-        }, 250),
-        scrollImg(e) {
-            let item = this.getContainer(e.target.parentNode)
-
-            return animateScrollTo(item, {
-                speed: 250,
-                maxDuration: 500,
-                offset: this.scrollBtn.dir == 'up' ? -item.scrollHeight : item.scrollHeight,
-                element: item,
-                useKeys: true
-            })
+        created() {
+            window.addEventListener('resize', this.isScrollable)
         },
-        getContainer(el) {
-            return el.querySelector('[data-img-container]')
+        mounted() {
+            this.isScrollable()
         },
-        toggleOpsMenu(){
-            return this.opsMenu = !this.opsMenu
+        beforeDestroy() {
+            window.removeEventListener('resize', this.isScrollable)
+        },
+        methods: {
+            isScrollable() {
+                let item = this.getContainer(this.$el)
+
+                if (item) {
+                    return this.scrollBtn.state = item.scrollHeight > item.offsetHeight
+                }
+            },
+            updateScrollDir: debounce(function (e) {
+                let item = e.target
+                let margin = 3
+
+                return this.scrollBtn.dir = (item.scrollTop + item.clientHeight) >= (item.scrollHeight - margin)
+                    ? 'up'
+                    : 'down'
+            }, 250),
+            scrollImg(e) {
+                let item = this.getContainer(e.target.parentNode)
+
+                return animateScrollTo(item, {
+                    speed: 250,
+                    maxDuration: 500,
+                    offset: this.scrollBtn.dir == 'up' ? -item.scrollHeight : item.scrollHeight,
+                    element: item,
+                    useKeys: true
+                })
+            },
+            getContainer(el) {
+                return el.querySelector('[data-img-container]')
+            },
+            toggleOpsMenu() {
+                return this.opsMenu = !this.opsMenu
+            }
         }
     }
-}
 </script>
 
 <style lang="scss" scoped>
-@import '../../../sass/modules/scroll-btn';
-@import '../../../sass/packages/goo';
+    @import '../../../sass/modules/scroll-btn';
+    @import '../../../sass/packages/goo';
 
-.wrapper {
-    overflow: hidden;
-    position: relative;
+    .wrapper {
+        overflow: hidden;
+        position: relative;
 
-    > div:first-child {
-        max-height: 40vh;
-        overflow-y: scroll;
+        > div:first-child {
+            max-height: 40vh;
+            overflow-y: scroll;
+        }
     }
-}
 
 </style>

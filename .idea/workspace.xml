@@ -3,18 +3,19 @@
   <component name="ChangeListManager">
     <list default="true" id="f6c99a06-f22e-47f6-9fd0-60dddb5718b7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/MediaManager/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/MediaManager/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/common.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/common.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/common.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/common.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/sass/common.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/sass/common.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/5e6b9720d5ae7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/sass/manager.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/sass/manager.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/ExampleComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/MediaComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/components/globalSearch/button.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/components/globalSearch/button.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/components/globalSearch/panel.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/components/globalSearch/panel.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/components/image/editor/controls.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/components/image/editor/controls.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/components/image/editor/filters/controls.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/components/image/editor/filters/controls.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/components/image/editor/filters/presets.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/components/image/editor/filters/presets.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/components/image/editor/main.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/components/image/editor/main.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/components/image/preview.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/components/image/preview.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/components/usageIntro/panel.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/components/usageIntro/panel.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/components/utils/dropdown.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/components/utils/dropdown.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/components/utils/upload-preview.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/components/utils/upload-preview.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/backend/categories/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/categories/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/footers/modal-media.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/footers/modal-media.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vendor/MediaManager/_manager.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/MediaManager/_manager.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -262,6 +263,7 @@
       <workItem from="1583914799583" duration="1982000" />
       <workItem from="1584010583459" duration="1759000" />
       <workItem from="1584106212865" duration="15120000" />
+      <workItem from="1584155264849" duration="3111000" />
     </task>
     <servers />
   </component>

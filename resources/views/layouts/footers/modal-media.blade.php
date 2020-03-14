@@ -239,35 +239,39 @@
                             </div>
 
                             {{-- lock --}}
-                            <div class="control">
-                                <button class="button is-warning"
-                                        ref="lock"
-                                        type="button"
-                                        :disabled="lock_btn_disable"
-                                        v-tippy
-                                        title="(L) ock"
-                                        @click.stop="lockFileForm()">
+                            @if (isset($lock) && $lock == true)
+                                <div class="control">
+                                    <button class="button is-warning"
+                                            ref="lock"
+                                            type="button"
+                                            :disabled="lock_btn_disable"
+                                            v-tippy
+                                            title="(L) ock"
+                                            @click.stop="lockFileForm()">
                                     <span class="icon">
                                         <icon :name="IsLocked(selectedFile) ? 'lock' : 'unlock'"></icon>
                                     </span>
-                                </button>
-                            </div>
+                                    </button>
+                                </div>
+                            @endif
 
                             {{-- visibility --}}
-                            <div class="control">
-                                <button class="button"
-                                        :class="IsVisible(selectedFile) ? 'is-light' : 'is-danger'"
-                                        ref="visibility"
-                                        type="button"
-                                        :disabled="vis_btn_disable"
-                                        v-tippy
-                                        title="(V) isibility"
-                                        @click.stop="FileVisibilityForm()">
+                            @if (isset($hidden) && $hidden == true)
+                                <div class="control">
+                                    <button class="button"
+                                            :class="IsVisible(selectedFile) ? 'is-light' : 'is-danger'"
+                                            ref="visibility"
+                                            type="button"
+                                            :disabled="vis_btn_disable"
+                                            v-tippy
+                                            title="(V) isibility"
+                                            @click.stop="FileVisibilityForm()">
                                     <span class="icon">
                                         <icon :name="IsVisible(selectedFile) ? 'eye' : 'eye-slash'"></icon>
                                     </span>
-                                </button>
-                            </div>
+                                    </button>
+                                </div>
+                            @endif
                         </div>
                     </div>
 
@@ -302,24 +306,27 @@
                             </div>
 
                             {{-- bulk select --}}
-                            <div class="control">
-                                <button @click.stop="blkSlct()"
-                                        ref="bulkSelect"
-                                        class="button"
-                                        type="button"
-                                        :class="{'is-danger' : bulkSelect}"
-                                        :disabled="searchItemsCount == 0 || !allItemsCount || isLoading"
-                                        v-tippy
-                                        title="b">
-                                    <span class="icon"><icon name="puzzle-piece"></icon></span>
-                                    <span>{{ trans('MediaManager::messages.select.bulk') }}</span>
-                                </button>
-                            </div>
+                            @if (isset($no_bulk) && $no_bulk == true)
+                                <div class="control">
+                                    <button @click.stop="blkSlct()"
+                                            ref="bulkSelect"
+                                            class="button"
+                                            type="button"
+                                            :class="{'is-danger' : bulkSelect}"
+                                            :disabled="searchItemsCount == 0 || !allItemsCount || isLoading"
+                                            v-tippy
+                                            title="b">
+                                        <span class="icon"><icon name="puzzle-piece"></icon></span>
+                                        <span>{{ trans('MediaManager::messages.select.bulk') }}</span>
+                                    </button>
+                                </div>
+                            @endif
                         </div>
                     </div>
 
                     <template>
                         {{-- filter & sort --}}
+                        @if (isset($filter) && $filter == true)
                         <div class="level-item" v-if="searchItemsCount != 0 && allItemsCount">
                             <filter-and-sorting :disabled="isLoading"
                                                 :filter-name-is="filterNameIs"
@@ -330,16 +337,17 @@
                                                 :trans="trans">
                             </filter-and-sorting>
                         </div>
-
+                        @endif
                         {{-- dir bookmarks --}}
-                        <div class="level-item" v-if="!restrictModeIsOn && firstRun">
-                            <dir-bookmarks :disabled="isLoading"
-                                           :dir-bookmarks="dirBookmarks"
-                                           :path="files.path"
-                                           :trans="trans">
-                            </dir-bookmarks>
-                        </div>
-
+                        @if (isset($bookmarks) && $bookmarks == true)
+                            <div class="level-item" v-if="!restrictModeIsOn && firstRun">
+                                <dir-bookmarks :disabled="isLoading"
+                                               :dir-bookmarks="dirBookmarks"
+                                               :path="files.path"
+                                               :trans="trans">
+                                </dir-bookmarks>
+                            </div>
+                        @endif
                         {{-- search --}}
                         <div class="level-item" v-if="allItemsCount">
                             <div class="control">
@@ -1056,7 +1064,7 @@
 @push('css')
     <link rel="stylesheet" href="{{ asset('assets/vendor/MediaManager/style.css') }}"/>
     <style>
-        .title:not(:last-child){
+        .title:not(:last-child) {
             margin-bottom: 0 !important;
         }
     </style>

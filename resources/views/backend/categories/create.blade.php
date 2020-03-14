@@ -53,7 +53,7 @@
                                 <!-- Upload media manager -->
                                 <media-component inline-template>
                                     <div style="height:160px">
-                                        <div v-if="inputName">@include('MediaManager::extras.modal')</div>
+                                        <div v-if="inputName">@include('MediaManager::extras.modal', ['filter' => false,'no_bulk'=> false,'bookmarks' => false, 'lock' => false, 'hidden' => false])</div>
                                         <media-modal item="cover" :name="inputName"></media-modal>
                                         <section>
                                             <input type="hidden" name="cover" :value="cover"/>

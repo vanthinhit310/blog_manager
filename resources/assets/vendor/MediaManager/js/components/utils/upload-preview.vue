@@ -21,6 +21,7 @@
              :class="{'show': panelIsVisible}">
             <button v-tippy="{arrow: true, placement: 'left'}"
                     class="btn-plain"
+                    type="button"
                     :class="{'alt': panelIsVisible}"
                     :title="trans('options')"
                     @click.stop="switchPanel()">
@@ -108,6 +109,7 @@
                         </h3>
                         <!-- add more -->
                         <button class="button is-success"
+                                type="button"
                                 @click.stop="addToExtra()">
                             <span class="icon is-small">
                                 <icon name="plus"

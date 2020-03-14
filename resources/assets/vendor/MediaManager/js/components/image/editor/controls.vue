@@ -5,6 +5,7 @@
                 v-tippy="{arrow: true, theme: 'mm'}"
                 :class="{'is-active': item.mode ? dragModeIs(item.mode) : false}"
                 :title="trans(item.trans)"
+                type="button"
                 :disabled="processing"
                 class="btn-plain"
                 @click.stop="operations(item.op)">

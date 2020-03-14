@@ -2,12 +2,13 @@
     <button v-tippy
             :disabled="loading || isLoading"
             :title="trans('glbl_search')"
+            type="button"
             class="button"
             @click.stop="done ? showSearchPanel() : init()">
-        <span class="icon">
-            <icon :spin="loading"
-                  name="globe"/>
-        </span>
+            <span class="icon">
+                <icon :spin="loading"
+                      name="globe"/>
+            </span>
     </button>
 </template>
 

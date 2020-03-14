@@ -19,6 +19,7 @@
                     <button v-tippy="{arrow: true, theme: 'mm'}"
                             :disabled="(processing && !imageDiffIsReady) || diffDisable"
                             :class="{'is-active': showDiff}"
+                            type="button"
                             :title="trans('diff')"
                             class="btn-plain"
                             @click.stop="toggleDiff()">
@@ -30,6 +31,7 @@
                             :disabled="processing || !haveFilters()"
                             :title="trans('crop_reset_filters')"
                             class="btn-plain"
+                            type="button"
                             @click.stop="resetFilters()">
                         <span class="icon">
                             <icon :name="processing ? 'spinner' : 'times'"
@@ -96,6 +98,7 @@
                     <button v-tippy="{arrow: true, theme: 'mm'}"
                             :disabled="processing || !hasChanged"
                             :title="trans('crop_reset')"
+                            type="button"
                             class="btn-plain"
                             @click.stop="operations('reset')">
                         <span class="icon">
@@ -109,6 +112,7 @@
                             :disabled="processing || !croppedByUser"
                             :title="trans('clear')"
                             class="btn-plain"
+                            type="button"
                             @click.stop="operations('clear')">
                         <span class="icon">
                             <icon :name="processing ? 'spinner' : 'ban'"
@@ -121,6 +125,7 @@
                             :disabled="processing || !hasChanged"
                             :title="trans('crop_apply')"
                             class="btn-plain"
+                            type="button"
                             @click.stop="applyChanges()">
                         <span class="icon">
                             <icon :name="processing ? 'spinner' : 'check'"
