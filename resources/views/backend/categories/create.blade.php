@@ -57,7 +57,7 @@
                                         <div v-if="inputName">@include('MediaManager::extras.modal', ['filter' => false,'no_bulk'=> false,'bookmarks' => false, 'lock' => false, 'hidden' => false])</div>
                                         <media-modal item="cover" :name="inputName"></media-modal>
                                         <section>
-                                            <input type="hidden" name="cover" :value="cover"/>
+                                            <input type="hidden" name="logo" :value="cover"/>
                                             <div v-if="cover != ''" class="avatar avatar-cover-custom form-group">
                                                 <img alt="Image placeholder" class="img-fluid w-100" :src="cover">
                                                 <a role="button" @click="removeCoverImage()" class="remove-media-image"><i class="fa fa-times" aria-hidden="true"></i></a>

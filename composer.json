@@ -21,6 +21,7 @@
         "laravel/ui": "^1.2",
         "owen-it/laravel-auditing": "^9.3",
         "santigarcor/laratrust": "5.2.*",
+        "spatie/laravel-image-optimizer": "^1.6",
         "spatie/laravel-medialibrary": "^7.0.0",
         "unisharp/laravel-filemanager": "^2.0"
     },

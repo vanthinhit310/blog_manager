@@ -122,6 +122,7 @@
       <path value="$PROJECT_DIR$/vendor/jhofm/flysystem-iterator" />
       <path value="$PROJECT_DIR$/vendor/ctf0/media-manager" />
       <path value="$PROJECT_DIR$/vendor/ctf0/package-changelog" />
+      <path value="$PROJECT_DIR$/vendor/spatie/laravel-image-optimizer" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.2" />

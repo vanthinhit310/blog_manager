@@ -15,8 +15,10 @@ use ctf0\MediaManager\App\Controllers\Modules\Upload;
 use ctf0\MediaManager\App\Controllers\Modules\Utils;
 use ctf0\MediaManager\App\Controllers\Modules\Visibility;
 use Jhofm\FlysystemIterator\Plugin\IteratorPlugin;
+use ctf0\MediaManager\App\Controllers\MediaController as BaseMediaController;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
-class MediaController extends Controller
+class MediaController extends BaseMediaController
 {
     use Utils,
         GetContent,
@@ -47,20 +49,20 @@ class MediaController extends Controller
     {
         $config = app('config')->get('mediaManager');
 
-        $this->fileSystem           = $config['storage_disk'];
-        $this->ignoreFiles          = $config['ignore_files'];
-        $this->fileChars            = $config['allowed_fileNames_chars'];
-        $this->folderChars          = $config['allowed_folderNames_chars'];
-        $this->sanitizedText        = $config['sanitized_text'];
-        $this->unallowedMimes       = $config['unallowed_mimes'];
-        $this->LMF                  = $config['last_modified_format'];
-        $this->GFI                  = $config['get_folder_info']   ?? true;
-        $this->paginationAmount     = $config['pagination_amount'] ?? 50;
+        $this->fileSystem = $config['storage_disk'];
+        $this->ignoreFiles = $config['ignore_files'];
+        $this->fileChars = $config['allowed_fileNames_chars'];
+        $this->folderChars = $config['allowed_folderNames_chars'];
+        $this->sanitizedText = $config['sanitized_text'];
+        $this->unallowedMimes = $config['unallowed_mimes'];
+        $this->LMF = $config['last_modified_format'];
+        $this->GFI = $config['get_folder_info'] ?? true;
+        $this->paginationAmount = $config['pagination_amount'] ?? 50;
 
-        $this->storageDisk     = app('filesystem')->disk($this->fileSystem);
+        $this->storageDisk = app('filesystem')->disk($this->fileSystem);
         $this->storageDiskInfo = app('config')->get("filesystems.disks.{$this->fileSystem}");
-        $this->baseUrl         = $this->storageDisk->url('/');
-        $this->db              = app('db')
+        $this->baseUrl = $this->storageDisk->url('/');
+        $this->db = app('db')
             ->connection($config['database_connection'] ?? 'mediamanager')
             ->table($config['table_locked'] ?? 'locked');
 
@@ -75,5 +77,11 @@ class MediaController extends Controller
     public function index()
     {
         return view('backend.media.index');
+    }
+
+    protected function optimizeUpload(UploadedFile $file)
+    {
+        app(\Spatie\ImageOptimizer\OptimizerChain::class)->optimize($file->getPathname());
+        return $file;
     }
 }

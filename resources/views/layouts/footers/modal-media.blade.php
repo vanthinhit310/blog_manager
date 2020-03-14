@@ -18,7 +18,7 @@
         'upload' => route('media.upload'),
         'locked_list' => route('media.locked_list')
     ]) }}"
-               :translations="{{ json_encode([
+         :translations="{{ json_encode([
         'add_to_list' => trans('MediaManager::messages.add.list'),
         'added' => trans('MediaManager::messages.add.added'),
         'already_exists' => trans('MediaManager::messages.error.already_exists'),
