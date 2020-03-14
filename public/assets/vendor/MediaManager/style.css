@@ -3182,7 +3182,7 @@ a.plyr__control::before {
 .dropzone-media-manager .form-switcher,
 .dropzone-media-manager .save_link {
   position: absolute;
-  z-index: 1;
+  z-index: 1000;
 }
 
 .dropzone-media-manager .form-switcher {
