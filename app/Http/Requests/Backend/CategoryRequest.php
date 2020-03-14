@@ -34,6 +34,9 @@ class CategoryRequest extends FormRequest
             'meta_title' => [
                 'required',
                 'max:70'
+            ],
+            'logo' => [
+                'required'
             ]
         ];
         if ($request->method() == 'PUT') {
@@ -46,6 +49,9 @@ class CategoryRequest extends FormRequest
                     'required',
                     'max:70',
                     Rule::unique((new Category())->getTable())->ignore($this->route()->category->id ?? null)
+                ],
+                'logo' => [
+                    'required'
                 ]
             ];
         }

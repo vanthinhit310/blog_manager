@@ -56,8 +56,9 @@
                                     <div style="height:160px">
                                         <div v-if="inputName">@include('MediaManager::extras.modal', ['filter' => false,'no_bulk'=> false,'bookmarks' => false, 'lock' => false, 'hidden' => false])</div>
                                         <media-modal item="cover" :name="inputName"></media-modal>
-                                        <section>
-                                            <input type="hidden" name="logo" :value="cover"/>
+                                        <section class="{{ $errors->has('logo') ? ' has-danger' : '' }}">
+                                            <input type="hidden" name="logo" class="form-control form-control-alternative {{ $errors->has('logo') ? ' is-invalid' : '' }}" :value="cover"/>
+
                                             <div v-if="cover != ''" class="avatar avatar-cover-custom form-group">
                                                 <img alt="Image placeholder" class="img-fluid w-100" :src="cover">
                                                 <a role="button" @click="removeCoverImage()" class="remove-media-image"><i class="fa fa-times" aria-hidden="true"></i></a>
@@ -67,9 +68,13 @@
                                                     <span class="btn-inner--text">Browser media</span>
                                                 </button>
                                             </div>
+                                            @if ($errors->has('logo'))
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $errors->first('logo') }}</strong>
+                                                </span>
+                                            @endif
                                         </section>
                                     </div>
-
                                 <!-- Upload media manager -->
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-success mt-4">{{ __('Save') }}</button>

@@ -56,6 +56,7 @@ class CategoryController extends Controller
      */
     public function store(CategoryRequest $request)
     {
+        dd($request->all());
         try {
             DB::beginTransaction();
             if (auth()->user()->can('add-category')) {
