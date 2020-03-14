@@ -3136,7 +3136,7 @@ a.plyr__control::before {
   visibility: unset;
 }
 
-.dropzone-media-manager {
+.dropzone-style {
   background-color: #1d2428;
   background-position: center;
   background-repeat: repeat;
@@ -3147,7 +3147,7 @@ a.plyr__control::before {
   transition: all 0.25s cubic-bezier(0.18, 0.89, 0.32, 1.28);
 }
 
-.dropzone-media-manager::before {
+.dropzone-style::before {
   background-image: var(--gradient);
   border-radius: 100vw;
   content: "";
@@ -3161,15 +3161,15 @@ a.plyr__control::before {
   width: 25vw;
 }
 
-.dropzone-media-manager:hover {
+.dropzone-style:hover {
   box-shadow: 0 6px 25px rgba(29, 36, 40, 0.3);
 }
 
-.dropzone-media-manager:hover::before {
+.dropzone-style:hover::before {
   box-shadow: 0 6px 25px rgba(29, 36, 40, 0.3);
 }
 
-.dropzone-media-manager .dz-message {
+.dropzone-style .dz-message {
   color: white;
   font-weight: 400;
   margin: 0;
@@ -3179,54 +3179,54 @@ a.plyr__control::before {
   background-color: transparent;
 }
 
-.dropzone-media-manager .form-switcher,
-.dropzone-media-manager .save_link {
+.dropzone-style .form-switcher,
+.dropzone-style .save_link {
   position: absolute;
   z-index: 1000;
 }
 
-.dropzone-media-manager .form-switcher {
+.dropzone-style .form-switcher {
   bottom: 0.5rem;
   left: 0.5rem;
 }
 
-.dropzone-media-manager .save_link {
+.dropzone-style .save_link {
   bottom: 0;
   -webkit-filter: drop-shadow(0 0 0.1rem rgba(29, 36, 40, 0.3));
           filter: drop-shadow(0 0 0.1rem rgba(29, 36, 40, 0.3));
   right: 0.5rem;
 }
 
-.dropzone-media-manager .save_link .circle,
-.dropzone-media-manager .save_link .anchor {
+.dropzone-style .save_link .circle,
+.dropzone-style .save_link .anchor {
   transition: all 0.25s cubic-bezier(0.18, 0.89, 0.32, 1.28);
 }
 
-.dropzone-media-manager .save_link .circle {
+.dropzone-style .save_link .circle {
   color: #eceff1;
 }
 
-.dropzone-media-manager .save_link .anchor {
+.dropzone-style .save_link .anchor {
   color: #5e7280;
 }
 
-.dropzone-media-manager .save_link:hover .anchor {
+.dropzone-style .save_link:hover .anchor {
   color: #eceff1;
 }
 
-.dropzone-media-manager .save_link:hover .circle {
+.dropzone-style .save_link:hover .circle {
   color: #5e7280;
 }
 
 @media screen and (max-width: 1023px) {
-  .dropzone-media-manager::before {
+  .dropzone-style::before {
     height: 40vw;
     width: 40vw;
   }
 }
 
 @media screen and (max-width: 768px) {
-  .dropzone-media-manager::before {
+  .dropzone-style::before {
     height: 50vw;
     width: 50vw;
   }

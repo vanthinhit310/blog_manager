@@ -55,7 +55,7 @@
     visibility: unset;
 }
 
-.dropzone-media-manager {
+.dropzone-style {
     background-color: $black;
     background-position: center;
     background-repeat: repeat;
@@ -139,14 +139,14 @@
 }
 
 @include media('max', 1023) {
-    .dropzone-media-manager::before {
+    .dropzone-style::before {
         height: 40vw;
         width: 40vw;
     }
 }
 
 @include media('max', 768) {
-    .dropzone-media-manager::before {
+    .dropzone-style::before {
         height: 50vw;
         width: 50vw;
     }

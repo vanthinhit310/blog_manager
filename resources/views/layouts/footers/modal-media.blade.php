@@ -395,7 +395,7 @@
         {{-- dropzone --}}
         <section>
             <div class="media-manager__dz" :class="{'__dz-active': uploadArea}">
-                <div class="dropzone-media-manager" :style="uploadPanelImg">
+                <div class="dropzone-style" :style="uploadPanelImg">
                     <input type="hidden" name="upload_path" :value="files.path">
                     <input type="hidden" name="random_names" :value="useRandomNamesForUpload">
 

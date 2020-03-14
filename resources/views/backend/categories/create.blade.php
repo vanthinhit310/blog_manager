@@ -18,7 +18,9 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <form method="post" action="{{ route('admin.category.store') }}" autocomplete="off">
+                        <media-component inline-template>
+
+                        <form class="dropzone-media-manager" method="post" action="{{ route('admin.category.store') }}" autocomplete="off">
                             @csrf
 
                             <h6 class="heading-small text-muted mb-4">{{ __('categories.categories_information') }}</h6>
@@ -51,7 +53,6 @@
 
 
                                 <!-- Upload media manager -->
-                                <media-component inline-template>
                                     <div style="height:160px">
                                         <div v-if="inputName">@include('MediaManager::extras.modal', ['filter' => false,'no_bulk'=> false,'bookmarks' => false, 'lock' => false, 'hidden' => false])</div>
                                         <media-modal item="cover" :name="inputName"></media-modal>
@@ -68,13 +69,14 @@
                                             </div>
                                         </section>
                                     </div>
-                                </media-component>
+
                                 <!-- Upload media manager -->
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-success mt-4">{{ __('Save') }}</button>
                                 </div>
                             </div>
                         </form>
+                        </media-component>
                     </div>
                 </div>
             </div>
