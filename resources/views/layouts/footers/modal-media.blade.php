@@ -1065,9 +1065,6 @@
     <link rel="stylesheet" href="{{ asset('assets/vendor/MediaManager/bulma.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/vendor/MediaManager/style.css') }}"/>
     <style>
-        .title:not(:last-child) {
-            margin-bottom: 0 !important;
-        }
         .card-header {
             display: unset;
         }

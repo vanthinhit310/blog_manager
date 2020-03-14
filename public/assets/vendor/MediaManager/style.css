@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Miriam+Libre:400,700);@charset "UTF-8";
+@charset "UTF-8";
 
 [v-cloak] {
   display: none;
@@ -3971,7 +3971,7 @@ a.plyr__control::before {
 
 .__modal-preview .modal-content {
   margin: 0;
-  max-width: 25vw;
+  max-width: 28vw;
   width: auto;
 }
 
