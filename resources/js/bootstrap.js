@@ -9,8 +9,8 @@ window._ = require('lodash');
 try {
     window.Popper = require('popper.js').default;
     window.$ = window.jQuery = require('jquery');
-
-    require('bootstrap');
+    // Co bootstrap trong app.blade.php roi nen comment thang nay lai de tranh tinh trang dung js
+    // require('bootstrap');
 } catch (e) {}
 
 /**
