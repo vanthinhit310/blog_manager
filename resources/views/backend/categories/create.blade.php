@@ -84,11 +84,3 @@
         @include('layouts.footers.auth')
     </div>
 @endsection
-@push('css')
-    <link rel="stylesheet" href="{{ asset('assets/vendor/MediaManager/bulma.css') }}">
-    <style>
-        .card-header {
-            display: unset;
-        }
-    </style>
-@endpush
