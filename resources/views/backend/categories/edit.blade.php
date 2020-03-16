@@ -18,40 +18,45 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <form method="post" action="{{ route('admin.category.update', $data) }}" autocomplete="off">
-                            @csrf
-                            @method('PUT')
-                            <h6 class="heading-small text-muted mb-4">{{ __('categories.categories_information') }}</h6>
-                            <div class="pl-lg-4">
-                                <div class="form-group{{ $errors->has('title') ? ' has-danger' : '' }}">
-                                    <label class="form-control-label required">{{__('categories.title')}}</label>
-                                    <input type="text" name="title" autocomplete="off" class="form-control form-control-alternative{{ $errors->has('title') ? ' is-invalid' : '' }}" placeholder="{{__('categories.title')}}" value="{{ @$data->title ?? old('title') }}" autofocus>
 
-                                    @if ($errors->has('title'))
-                                        <span class="invalid-feedback" role="alert">
+                            <form method="post" action="{{ route('admin.category.update', $data) }}" autocomplete="off">
+                                @csrf
+                                @method('PUT')
+                                <h6 class="heading-small text-muted mb-4">{{ __('categories.categories_information') }}</h6>
+                                <div class="pl-lg-4">
+                                    <div class="form-group{{ $errors->has('title') ? ' has-danger' : '' }}">
+                                        <label class="form-control-label required">{{__('categories.title')}}</label>
+                                        <input type="text" name="title" autocomplete="off" class="form-control form-control-alternative{{ $errors->has('title') ? ' is-invalid' : '' }}" placeholder="{{__('categories.title')}}" value="{{ @$data->title ?? old('title') }}" autofocus>
+
+                                        @if ($errors->has('title'))
+                                            <span class="invalid-feedback" role="alert">
                                             <strong>{{ $errors->first('title') }}</strong>
                                         </span>
-                                    @endif
-                                </div>
-                                <div class="form-group{{ $errors->has('meta_title') ? ' has-danger' : '' }}">
-                                    <label class="form-control-label required">{{__('categories.meta_title')}}</label>
-                                    <input type="text" name="meta_title" autocomplete="off" class="form-control form-control-alternative{{ $errors->has('meta_title') ? ' is-invalid' : '' }}" placeholder="{{__('categories.meta_title')}}" value="{{ @$data->meta_title ?? old('meta_title') }}" autofocus>
+                                        @endif
+                                    </div>
+                                    <div class="form-group{{ $errors->has('meta_title') ? ' has-danger' : '' }}">
+                                        <label class="form-control-label required">{{__('categories.meta_title')}}</label>
+                                        <input type="text" name="meta_title" autocomplete="off" class="form-control form-control-alternative{{ $errors->has('meta_title') ? ' is-invalid' : '' }}" placeholder="{{__('categories.meta_title')}}" value="{{ @$data->meta_title ?? old('meta_title') }}" autofocus>
 
-                                    @if ($errors->has('meta_title'))
-                                        <span class="invalid-feedback" role="alert">
+                                        @if ($errors->has('meta_title'))
+                                            <span class="invalid-feedback" role="alert">
                                             <strong>{{ $errors->first('meta_title') }}</strong>
                                         </span>
-                                    @endif
+                                        @endif
+                                    </div>
+
+                                    <media-input-component></media-input-component>
+
+                                    <div class="form-group">
+                                        <label class="form-control-label">{{__('categories.content')}}</label>
+                                        <textarea name="content" class="form-control form-control-alternative{{ $errors->has('content') ? ' is-invalid' : '' }}" rows="3">{{ @$data->content ?? old('content')}}</textarea>
+                                    </div>
+
+                                    <div class="text-center">
+                                        <button type="submit" class="btn btn-success mt-4">{{ __('Save') }}</button>
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <label class="form-control-label">{{__('categories.content')}}</label>
-                                    <textarea name="content" class="form-control form-control-alternative{{ $errors->has('content') ? ' is-invalid' : '' }}" rows="3">{{ @$data->content ?? old('content')}}</textarea>
-                                </div>
-                                <div class="text-center">
-                                    <button type="submit" class="btn btn-success mt-4">{{ __('Save') }}</button>
-                                </div>
-                            </div>
-                        </form>
+                            </form>
                     </div>
                 </div>
             </div>

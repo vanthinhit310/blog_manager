@@ -12,4 +12,5 @@ class ConstManager
     public const  USERROLE = 'user';
     public const  OWNERROLE = 'owner';
     public const  ADMINROLE = 'admin';
+    public const UPLOAD_FOLDER = 'uploads/';
 }

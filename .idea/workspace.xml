@@ -2,10 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f6c99a06-f22e-47f6-9fd0-60dddb5718b7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/js/components/MediaInputComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ConstManager/ConstManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/ConstManager/ConstManager.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Backend/CategoryRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Backend/CategoryRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Model/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/helpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/common.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/common.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/common.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/common.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/sass/common.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/sass/common.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/5e6c6ee97cd62.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/5e6c6f0ec63c5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/5e6c6f51b535e.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/5e6c6fdfed3f9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/language-logo/5e6c9175a9c6b.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/language-logo/5e6c91762034e.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/language-logo/5e6c91768a6b7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/language-logo/5e6c91770425b.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/language-logo/5e6c91776f8b2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/language-logo/5e6c9177d983b.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/language-logo/5e6c917851251.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/language-logo/5e6c9178bb89c.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/language-logo/5e6c917930ffe.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/language-logo/5e6c91799af7d.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/language-logo/5e6c917a6f4e7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/language-logo/5e6c917ada434.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/modules/watch.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/vendor/MediaManager/js/modules/watch.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/MediaComponent.vue" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/backend/categories/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/categories/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/categories/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/categories/edit.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +55,7 @@
         <option value="Sass File" />
         <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="Vue Single File Component" />
         <option value="SCSS File" />
       </list>
     </option>
@@ -178,7 +207,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="add_unversioned_files" value="$PROJECT_DIR$/vendor/unisharp/laravel-filemanager/src/Lfm.php&#10;E:/xampp/htdocs/blog_manager/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php&#10;E:/xampp/htdocs/blog_manager/.env&#10;E:/xampp/htdocs/blog_manager/vendor/ctf0/media-manager/src/MediaRoutes.php&#10;E:/xampp/htdocs/blog_manager/vendor/unisharp/laravel-filemanager/src/Controllers/LfmController.php" />
+    <property name="add_unversioned_files" value="$PROJECT_DIR$/vendor/unisharp/laravel-filemanager/src/Lfm.php&#10;E:/xampp/htdocs/blog_manager/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php&#10;E:/xampp/htdocs/blog_manager/.env&#10;E:/xampp/htdocs/blog_manager/vendor/ctf0/media-manager/src/MediaRoutes.php&#10;E:/xampp/htdocs/blog_manager/vendor/unisharp/laravel-filemanager/src/Controllers/LfmController.php&#10;E:/xampp/htdocs/blog_manager/vendor/spatie/laravel-medialibrary/src/PathGenerator/PathGenerator.php" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/lang/en" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -254,7 +283,9 @@
       <workItem from="1583914799583" duration="1982000" />
       <workItem from="1584010583459" duration="1759000" />
       <workItem from="1584106212865" duration="15120000" />
-      <workItem from="1584155264849" duration="9817000" />
+      <workItem from="1584155264849" duration="14383000" />
+      <workItem from="1584323411998" duration="15000" />
+      <workItem from="1584374371314" duration="4651000" />
     </task>
     <servers />
   </component>
@@ -322,10 +353,10 @@
     </state>
     <state x="184" y="12" key="SettingsEditor/0.0.1366.738/1366.-304.1920.1050@0.0.1366.738" timestamp="1582895275984" />
     <state x="184" y="12" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1581940371467" />
-    <state x="312" y="66" width="741" height="606" key="find.popup" timestamp="1584172331475">
+    <state x="312" y="66" width="741" height="606" key="find.popup" timestamp="1584380937071">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="312" y="66" width="741" height="606" key="find.popup/0.0.1366.738/1366.-304.1920.1050@0.0.1366.738" timestamp="1584172331475" />
+    <state x="312" y="66" width="741" height="606" key="find.popup/0.0.1366.738/1366.-304.1920.1050@0.0.1366.738" timestamp="1584380937071" />
     <state x="312" y="66" width="741" height="606" key="find.popup/0.0.1366.738@0.0.1366.738" timestamp="1583114895204" />
     <state x="339" y="165" key="run.anything.popup" timestamp="1584113366653">
       <screen x="0" y="0" width="1366" height="738" />

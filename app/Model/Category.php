@@ -13,7 +13,6 @@ class Category extends Model implements Auditable, HasMedia
     use \OwenIt\Auditing\Auditable;
     use Sluggable;
     use HasMediaTrait;
-
     protected $table = 'categories';
 
     protected $fillable = [

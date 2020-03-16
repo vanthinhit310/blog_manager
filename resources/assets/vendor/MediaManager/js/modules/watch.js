@@ -3,7 +3,6 @@ export default {
         // files
         selectedFile(val) {
             this.resetInput('audioFileMeta', {})
-
             if (val) {
                 if (this.selectedFileIs('audio')) {
                     this.getAudioData(val.path)
@@ -12,7 +11,8 @@ export default {
                 if (this.inModal && !this.isBulkSelecting()) {
                     this.selectedFileIs('folder')
                         ? EventHub.fire('folder_selected', val.storage_path)
-                        : EventHub.fire('file_selected', val.path)
+                        : EventHub.fire('file_selected', val.storage_path);
+                        // : EventHub.fire('file_selected', val.path)
                 }
 
                 return this.updateLs({'selectedFileName': val.name})

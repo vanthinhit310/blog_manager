@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Backend\CategoryRequest;
 use App\Model\Category;
 use Illuminate\Support\Facades\DB;
+use Spatie\MediaLibrary\Models\Media;
 
 class CategoryController extends Controller
 {
@@ -56,7 +57,6 @@ class CategoryController extends Controller
      */
     public function store(CategoryRequest $request)
     {
-        dd($request->all());
         try {
             DB::beginTransaction();
             if (auth()->user()->can('add-category')) {
@@ -117,7 +117,14 @@ class CategoryController extends Controller
         try {
             DB::beginTransaction();
             if (auth()->user()->can('update-category')) {
+                $media = Media::whereModelType(Category::class)->whereModelId($category->id)->first();
+                if (exists_and_blank($media)) {
+                    $media->delete();
+                }
                 $category->update($request->all());
+                $category->addMedia(public_path(ConstManager::UPLOAD_FOLDER) . $request->get('logo'))
+                    ->preservingOriginal()
+                    ->toMediaCollection();
                 DB::commit();
                 return redirect()->route('admin.category.index')->withSuccess($request->title . __('core.update_success'));
             } else {
@@ -138,20 +145,20 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        try{
+        try {
             DB::beginTransaction();
             if (auth()->user()->can('destroy-category')) {
                 $name = $category->title;
                 $category->delete();
                 DB::commit();
-                return redirect()->route('admin.category.index')->withSuccess($name.__('core.delete_success'));
+                return redirect()->route('admin.category.index')->withSuccess($name . __('core.delete_success'));
             } else {
                 DB::rollBack();
                 return redirect()->route('admin.dashboard')->withInfo('Permission denied!');
             }
-        }catch(Throwable $th){
+        } catch (Throwable $th) {
             DB::rollBack();
-          dd($th->getMessage());
+            dd($th->getMessage());
         }
     }
 }

@@ -1,7 +1,8 @@
 <?php
 if (!function_exists('activeMenu')) {
 
-    function activeMenu($route, $class = 'active') {
+    function activeMenu($route, $class = 'active')
+    {
         if ($route == url()->current()) {
             return $class;
         } else {
@@ -11,12 +12,12 @@ if (!function_exists('activeMenu')) {
 
 }
 
-if (! function_exists('getLongLivedAccessTokenCURL')) {
+if (!function_exists('getLongLivedAccessTokenCURL')) {
 
     function getLongLivedAccessTokenCURL($accessToken)
     {
         $clientId = '735782230232735';
-        $clientSecret ='4f67a85b4629ffdc8ec2905db5cee316';
+        $clientSecret = '4f67a85b4629ffdc8ec2905db5cee316';
         $result = (function ($method, $url, $datas) {
             $curl = curl_init();
             switch ($method) :
@@ -35,8 +36,7 @@ if (! function_exists('getLongLivedAccessTokenCURL')) {
                         $url = sprintf('%s?%s', $url, http_build_query($datas));
                     endif;
 
-            endswitch
-            ;
+            endswitch;
             curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
             curl_setopt($curl, CURLOPT_URL, $url);
             curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
@@ -48,4 +48,16 @@ if (! function_exists('getLongLivedAccessTokenCURL')) {
 
         return $resultDecode = json_decode($result, true);
     }
+}
+
+if (!function_exists('exists_and_blank')) {
+
+    function exists_and_blank($data)
+    {
+        if (isset($data) && !blank($data)) {
+            return true;
+        }
+        return false;
+    }
+
 }
